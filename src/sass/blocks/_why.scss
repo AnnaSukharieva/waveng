@@ -1,0 +1,373 @@
+.why {
+	font-family: "Stolzl";
+	&__we {
+		padding-left: 90px;
+		padding-bottom: 92px;
+	}
+	&__individual {
+		font-family: "Stolzl";
+		text-align: center;
+		h3 {
+			font-weight: 400;
+			font-size: 30px;
+			line-height: 140%;
+			display: inline;
+		}
+		color: #212121;
+		position: relative;
+		margin-bottom: 51px;
+		img {
+			border: 3px solid #212121;
+			border-radius: 6px;
+			padding: 9px;
+			margin-right: 15px;
+		}
+	}
+	&__match {
+		margin: 0 auto;
+		max-width: 870px;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 42px;
+		z-index: 3;
+		position: relative;
+		&:hover {
+			.hover {
+				opacity: 1;
+			}
+			.elem-1 {
+				transform: translateX(181%);
+			}
+			.elem-3 {
+				transform: translateX(-181%);
+			}
+			.why__match-reverso {
+				transform: rotate(360deg);
+			}
+		}
+		.hover {
+			opacity: 0;
+			transition-duration: 0.4s;
+		}
+		.elem-1,
+		.elem-3 {
+			transition-duration: 0.4s;
+			z-index: 3;
+		}
+		&-reverso {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			transition-duration: 0.4s;
+			.under {
+				transform: rotate(180deg);
+			}
+		}
+		&-img {
+			margin: 0 20px;
+			border: 2px solid $black;
+			box-shadow: 10px 10px $black;
+			border-radius: 20px;
+			transition-duration: 0.4s;
+			z-index: 3;
+			img {
+				border: 20px solid #ffffff;
+				box-sizing: border-box;
+				border-radius: 20px;
+				width: 266px;
+				height: auto;
+				height: auto;
+			}
+		}
+		&-text {
+			&-hidden {
+				display: none;
+			}
+			padding-left: 60px;
+			position: static;
+			div {
+				max-width: 307px;
+				font-weight: 300;
+				font-size: 18px;
+				line-height: 160%;
+				color: #212121;
+			}
+		}
+	}
+	.wrapper {
+		position: relative;
+		&::before {
+			content: "";
+			background: url("../icons/small_waves.svg") no-repeat;
+			position: absolute;
+			right: 90px;
+			top: 400px;
+			width: 200px;
+			height: 70px;
+			z-index: 1;
+		}
+	}
+	/* Landscape tablets and medium desktops */
+	@media (min-width: 992px) and (max-width: 1199px) {
+	}
+
+	/* Portrait tablets and small desktops */
+	@media (min-width: 768px) and (max-width: 991px) {
+		&__match {
+			justify-content: space-around;
+			&-img {
+				box-shadow: 8px 8px $black;
+				img {
+					border: 15px solid #ffffff;
+					width: 220px;
+				}
+			}
+			&-text {
+				justify-content: space-between;
+				div {
+					max-width: 307px;
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 160%;
+					color: #212121;
+				}
+			}
+		}
+	}
+
+	/* Landscape phones and portrait tablets */
+	@media (max-width: 767px) {
+		pointer-events: none;
+		&__we {
+			padding-left: 0px;
+			padding-bottom: 32px;
+		}
+		&__individual {
+			margin-bottom: 92px;
+			h3 {
+				font-size: 24px;
+				display: block;
+				max-width: 200px;
+				text-align: left;
+				margin-left: 115px;
+			}
+			position: relative;
+			img {
+				display: block;
+				position: absolute;
+				left: 50px;
+				top: 10px;
+			}
+		}
+		&__match {
+			position: relative;
+			display: block;
+			width: 480px;
+			height: 250px;
+			margin: 0 auto;
+			&-img {
+				box-shadow: 8px 8px $black;
+				img {
+					border: 15px solid #ffffff;
+					width: 220px;
+				}
+			}
+			&-text {
+				position: relative;
+				&-hidden {
+					position: absolute;
+					display: block;
+
+					font-size: 16px;
+					max-width: 250px;
+					font-weight: 300;
+					color: #212121;
+					line-height: 160%;
+					top: -70px;
+					left: 50px;
+				}
+				div {
+					&:first-child {
+						display: none;
+					}
+					&:last-child {
+						padding-top: 160px;
+						padding-left: 130px;
+						font-size: 16px;
+						font-weight: 300;
+					}
+				}
+			}
+		}
+		.elem-2 {
+			position: relative;
+			.straight {
+				position: absolute;
+				right: 0;
+				transform: rotate(45deg);
+			}
+			.under {
+				position: absolute;
+				right: 300px;
+				top: 300px;
+				transform: rotate(225deg);
+			}
+			.hover {
+				position: absolute;
+				opacity: 1;
+				right: 15px;
+				top: 80px;
+			}
+		}
+		.elem-1 {
+			position: absolute;
+			left: 30px;
+		}
+		.elem-3 {
+			position: absolute;
+			top: 150px;
+			left: 180px;
+		}
+		.wrapper {
+			position: relative;
+			&::before {
+				content: "";
+				background: url("../icons/small_waves.svg") no-repeat;
+				right: -40px;
+				top: 635px;
+				z-index: 4;
+			}
+		}
+	}
+
+	/* Portrait phones and smaller */
+	@media (max-width: 480px) {
+		&__individual {
+			img {
+				left: 20px;
+				top: 10px;
+			}
+			h3 {
+				margin-left: 85px;
+			}
+		}
+		&__match {
+			width: 320px;
+			height: 200px;
+			margin: 0 auto;
+			&-img {
+				box-shadow: 4px 4px $black;
+				img {
+					border: 10px solid #ffffff;
+					width: 165px;
+				}
+			}
+			&-text {
+				&-hidden {
+					left: 20px;
+					font-size: 14px;
+				}
+				div {
+					&:last-child {
+						padding-top: 130px;
+						padding-left: 15px;
+						font-size: 14px;
+					}
+				}
+			}
+			.elem-1 {
+				left: 0px;
+			}
+			.elem-3 {
+				top: 130px;
+				left: 110px;
+			}
+			.elem-2 {
+				.under {
+					left: 110px;
+					top: 250px;
+				}
+				.hover {
+					right: -5px;
+					top: 72px;
+					transform: scale(0.7);
+				}
+			}
+		}
+		.wrapper {
+			&::before {
+				right: -90px;
+				top: 550px;
+			}
+		}
+	}
+
+	/* Iphone 5 */
+	@media (max-width: 320px) {
+		&__we {
+			transform: scale(0.7);
+		}
+		&__individual {
+			img {
+				left: 15px;
+				top: 5px;
+				transform: scale(0.7);
+			}
+			h3 {
+				font-size: 18px;
+				margin-left: 70px;
+			}
+		}
+		&__match {
+			width: 240px;
+			height: 170px;
+			&-img {
+				img {
+					width: 135px;
+				}
+			}
+			&-text {
+				&-hidden {
+					left: 5px;
+					top: -50px;
+					font-size: 12px;
+				}
+				div {
+					&:last-child {
+						padding-top: 75px;
+						padding-left: 0px;
+						font-size: 12px;
+					}
+				}
+			}
+			.elem-1 {
+				left: -20px;
+			}
+			.elem-3 {
+				top: 90px;
+				left: 90px;
+			}
+			.elem-2 {
+				transform: scale(0.7);
+				.straight {
+					right: -70px;
+					top: 10px;
+				}
+				.under {
+					left: 50px;
+					top: 280px;
+				}
+				.hover {
+					right: -70px;
+					top: 72px;
+					transform: scale(0.7);
+				}
+			}
+		}
+		.wrapper {
+			&::before {
+				display: none;
+			}
+		}
+	}
+}

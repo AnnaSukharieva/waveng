@@ -1,0 +1,198 @@
+.feedback {
+	display: flex;
+	padding: 0 0 0 64px;
+	justify-content: center;
+	&-mob {
+		box-sizing: border-box;
+		width: 100vw;
+		display: none;
+		background-color: #b1b1ff;
+		width: 100%;
+		padding: 50px;
+		&-wrapper {
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.feedback__menu-title{
+				margin-top: 36px;
+			}
+			.button {
+				margin-bottom: 30px;
+			}
+		}
+	}
+	&__menu {
+		background: #b1b1ff;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		box-sizing: border-box;
+		padding: 50px 60px 50px 60px;
+		max-width: 417px;
+		height: 340px;
+		&-title {
+			max-width: 250px;
+			text-align: center;
+			font-weight: 700;
+			font-size: 34px;
+			line-height: 130%;
+			text-transform: uppercase;
+		}
+		&-button {
+			margin-top: 18px;
+		}
+	}
+
+	&__items {
+		&-mob {
+			display: block;
+			overflow: auto;
+		}
+		display: flex;
+		overflow-x: auto;
+	}
+
+	&__item {
+		box-sizing: border-box;
+		min-width: 310px;
+		max-width: 310px;
+		padding: 21px;
+		margin: 0 15px;
+		min-height: 340px;
+		background: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		&:first-child {
+			margin: 0 15px 0 30px;
+		}
+		&-mob {
+			height: 340px;
+			width: 310px;
+			margin: 0 auto;
+			&:first-child {
+				margin: 0 auto;
+			}
+		}
+		&-comment {
+			box-sizing: border-box;
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 170%;
+			padding: 5px 5px 5px 17px;
+			color: #212121;
+			position: relative;
+			width: 100%;
+			height: auto;
+			text-align: start;
+			background-color: #fff;
+			border: 3px solid #ffeafe;
+			border-radius: 10px;
+			&:before {
+				content: "";
+				position: absolute;
+				width: 0;
+				height: 0;
+				right: 45px;
+				bottom: -50px;
+				border: 25px solid;
+				transform: skew(-30deg, 0deg);
+				border-color: #ffeafe transparent transparent #ffeafe;
+			}
+			&:after {
+				content: " ";
+				position: absolute;
+				width: 0;
+				height: 0;
+				right: 39px;
+				bottom: -40px;
+				border: 24px solid;
+				transform: skew(-30deg, 0deg);
+				border-color: #fff transparent transparent #fff;
+			}
+		}
+		&-person {
+			display: flex;
+		}
+		&-photo {
+			img {
+				border: 2px solid #212121;
+				border-radius: 10px;
+			}
+		}
+		&-info {
+			padding-left: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		&-name {
+			display: flex;
+			a {
+				img {
+					transform: translateY(5px);
+					padding-left: 10px;
+				}
+			}
+			font-weight: 300;
+			font-size: 18px;
+			line-height: 160%;
+		}
+		&-about {
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 160%;
+			color: #b6b6b6;
+		}
+	}
+	.green {
+		.feedback__item-comment {
+			border: 3px solid #d1ffca;
+			&:before {
+				border-color: #d1ffca transparent transparent #d1ffca;
+			}
+			&:after {
+				border-color: #fff transparent transparent #fff;
+			}
+		}
+	}
+
+	.blue {
+		.feedback__item-comment {
+			border: 3px solid #cae4ff;
+			&:before {
+				border-color: #cae4ff transparent transparent #cae4ff;
+			}
+			&:after {
+				border-color: #fff transparent transparent #fff;
+			}
+		}
+	}
+
+	.slick-slider {
+		height: 430px;
+	}
+
+	.slick-prev {
+		position: absolute;
+		top: 370px;
+		right: 53%;
+	}
+
+	.slick-next {
+		position: absolute;
+		top: 370px;
+		left: 53%;
+	}
+
+	/* Landscape phones and portrait tablets */
+	@media (max-width: 830px) {
+		padding: 5px;
+		display: none;
+		&-mob {
+			display: block;
+		}
+	}
+}

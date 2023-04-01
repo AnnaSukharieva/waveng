@@ -1,0 +1,301 @@
+.entery {
+	display: flex;
+	height: 100vh;
+	justify-content: space-around;
+	border-top: 2px #212121 solid;
+	border-bottom: 2px #212121 solid;
+	position: relative;
+	&__img {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background-color: #b1b1ff;
+		width: 50%;
+		&-text {
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 160%;
+			padding-bottom: 18px;
+		}
+		.img-border {
+			overflow: visible;
+		}
+		&-wrapper {
+			width: 420px;
+			position: relative;
+			&::before {
+				content: "";
+				position: absolute;
+				background: url("../icons/asap.svg") no-repeat;
+				width: 222px;
+				height: 150px;
+				left: -60px;
+				top: 30px;
+			}
+		}
+	}
+	&__form {
+		.disabled{
+			button{
+				color: gray;
+				border-color: gray;
+				box-shadow: 6px 6px gray;
+				&:hover {
+					color: gray;
+					background-color: #fff;
+					transform: translate(0px);
+				}
+			}
+		}
+		&-decor {
+			padding-top: 24px;
+			align-self: end;
+			padding-right: 163px;
+		}
+		border-left: 2px #212121 solid;
+		background-color: #ffff;
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		&-text {
+			text-transform: uppercase;
+			font-style: normal;
+			font-weight: 700;
+			font-size: 34px;
+			line-height: 130%;
+			color: #212121;
+			margin-bottom: 24px;
+		}
+		&-form {
+			.error {
+				border-color: #ed0d1a;
+				margin-bottom: 10px;
+			}
+			label.error {
+				border: none;
+				text-align: center;
+				margin-bottom: 15px;
+			}
+			position: relative;
+			&::before {
+				content: "";
+				position: absolute;
+				background: url("../icons/shine.svg") no-repeat;
+				transform: rotate(-180deg);
+				width: 38px;
+				height: 38px;
+				left: -25px;
+				top: 98%;
+			}
+			display: flex;
+			flex-direction: column;
+			border: 2px solid #212121;
+			box-shadow: 7px 7px #212121;
+			border-radius: 20px;
+			padding: 45px;
+			input {
+				font-weight: 300;
+				font-size: 18px;
+				line-height: 170%;
+				color: #212121;
+				display: block;
+				box-sizing: border-box;
+				align-items: center;
+				padding: 7px 10px 8px 14px;
+				width: 378px;
+				height: 46px;
+				border: 2px solid #b6b6b6;
+				border-radius: 10px;
+				margin-bottom: 20px;
+			}
+			button {
+				margin-top: 12px;
+				display: block;
+				color: #252cde;
+				font-weight: 500;
+				font-size: 18px;
+				text-transform: uppercase;
+				line-height: 170%;
+				width: 298px;
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+
+		.thanks {
+			text-align: center;
+			color: #252cde;
+			font-weight: 500;
+			font-size: 25px;
+			padding: 30px;
+		}
+	}
+
+	/* Landscape tablets and medium desktops */
+	@media (min-width: 992px) and (max-width: 1199px) {
+		&__img {
+			&-text {
+				font-size: 16px;
+			}
+			&-wrapper {
+				width: 360px;
+			}
+		}
+		&__form {
+			&-decor {
+				padding-top: 24px;
+				padding-right: 60px;
+			}
+			&-form {
+				input {
+					width: 320px;
+					align-items: center;
+				}
+				button {
+					width: 280px;
+				}
+			}
+		}
+	}
+
+	/* Portrait tablets and small desktops */
+	@media (min-width: 768px) and (max-width: 991px) {
+		&__img {
+			&-text {
+				font-size: 12px;
+			}
+			&-wrapper {
+				width: 270px;
+				&::before {
+					background-size: 60%;
+					left: -40px;
+					top: 20px;
+				}
+			}
+		}
+		&__form {
+			&-text {
+				font-size: 26px;
+			}
+			&-decor {
+				padding-right: 30px;
+			}
+			&-form {
+				border-radius: 20px;
+				padding: 25px;
+				input {
+					width: 270px;
+					align-items: center;
+				}
+				button {
+					width: 230px;
+				}
+			}
+		}
+	}
+
+	/* Landscape phones and portrait tablets */
+	@media (max-width: 767px) {
+		height: 100%;
+		flex-direction: column;
+		width: 100%;
+		border-top: none;
+		border-bottom: none;
+		&__img {
+			&-text {
+				font-size: 20px;
+				text-align: center;
+				max-width: 262px;
+				padding-bottom: 52px;
+			}
+			height: 580px;
+			width: 100%;
+			&-wrapper {
+				width: 318px;
+				&::after {
+					content: "";
+					position: absolute;
+					background: url("../icons/shine.svg") no-repeat;
+					width: 38px;
+					height: 38px;
+					right: -30px;
+					top: -30px;
+				}
+				&::before {
+					left: -60px;
+					top: -50px;
+				}
+			}
+		}
+		&__form {
+			width: 100%;
+			height: 526px;
+			background: none;
+			&-decor {
+				padding-right: 30px;
+			}
+			&-text {
+				font-size: 30px;
+				max-width: 190px;
+				text-align: center;
+			}
+			&-form {
+				&::before {
+					opacity: 1;
+				}
+				width: 70%;
+				background: #fff;
+				padding: 45px 32px;
+
+				input {
+					width: 100%;
+					padding: 7px 10px 8px 14px;
+					align-items: center;
+				}
+				button {
+					width: 100%;
+				}
+			}
+		}
+		.img-border {
+			img {
+				border: 12px solid #ffffff;
+			}
+		}
+	}
+
+	/* Portrait phones and smaller */
+	@media (max-width: 480px) {
+		&__img {
+			height: 480px;
+			&-wrapper {
+				width: 240px;
+				&::before {
+					background-size: 70%;
+					left: -40px;
+					top: -40px;
+				}
+			}
+		}
+		&__form {
+			label.error {
+				font-size: 10px;
+				border: none;
+				text-align: center;
+				margin-bottom: 15px;
+			}
+			height: 526px;
+			&-form {
+				width: 60%;
+			}
+		}
+	}
+
+	/* Iphone 5 */
+	@media (max-width: 320px) {
+	}
+}

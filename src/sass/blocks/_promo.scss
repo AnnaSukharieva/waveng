@@ -1,0 +1,259 @@
+.promo {
+	position: relative;
+	width: 90%;
+	max-width: 1300px;
+	margin: 0 auto;
+	// z-index: 5;
+	// &__wrapper {
+	// 	position: relative;
+	// 	width: 95%;
+	// 	margin: 0 auto;
+	// }
+	&__burger {
+		display: none;
+		background: #ffffff;
+		border: 4px solid #212121;
+		img {
+			margin: 20px;
+		}
+	}
+	&__menu {
+		box-sizing: border-box;
+		margin-top: 60px;
+		padding: 18px 24px;
+		border: 4px solid $black;
+		background: #ffffff;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		nav {
+			ul {
+				display: flex;
+				width: 370px;
+				justify-content: space-between;
+				li {
+					a {
+						color: $black;
+						font-family: "Stolzl";
+						font-weight: 300;
+						font-size: 18px;
+						transition-duration: 0.4s;
+
+						&:hover {
+							color: $blue;
+							font-size: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__logo {
+		max-width: 227px;
+	}
+
+	&__main {
+		padding-top: 130px;
+	}
+
+	&__title {
+		margin: 0 auto;
+		max-width: 490px;
+		font-family: "Stolzl";
+		line-height: 250%;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 23px;
+		text-align: center;
+		text-transform: uppercase;
+		color: $black;
+		position: relative;
+		&::before {
+			content: "";
+			background: url("../icons/Wow!.svg") no-repeat;
+			position: absolute;
+			left: -40px;
+			top: -70px;
+			width: 90px;
+			height: 70px;
+		}
+	}
+
+	&__form {
+		margin-top: 42px;
+		margin-bottom: 210px;
+	}
+
+	&__waves-decor {
+		position: absolute;
+		right: 0;
+		top: 140px;
+	}
+
+	&__small-waves-decor {
+		position: absolute;
+		left: 0px;
+		top: -150px;
+	}
+
+	/* Landscape tablets and medium desktops */
+	@media (min-width: 992px) and (max-width: 1199px) {
+		&__waves-decor {
+			position: absolute;
+			right: 30px;
+		}
+	}
+
+	/* Portrait tablets and small desktops */
+	@media (min-width: 768px) and (max-width: 991px) {
+		&__waves-decor {
+			position: absolute;
+			right: 30px;
+		}
+	}
+
+	/* Landscape phones and portrait tablets */
+	@media (max-width: 767px) {
+		&__menu {
+			margin-top: 19px;
+			// &__promo {
+			// 	width: 100px;
+			// }
+		}
+		&__waves-decor {
+			display: none;
+		}
+		&__menu {
+			background: none;
+			border: none;
+			nav {
+				display: none;
+			}
+		}
+		&__title {
+			max-width: 470px;
+			font-size: 20px;
+			&::before {
+				background-size: 70%;
+				left: 5px;
+				top: -60px;
+			}
+		}
+		// &__form {
+		// 	padding: 45px 35px 45px 40px;
+		// 	max-width: 280px;
+		// 	&-button {
+		// 		&::after {
+		// 			right: -100px;
+		// 			top: -150px;
+		// 		}
+		// 	}
+		// 	&-button {
+		// 		width: 90%;
+		// 	}
+		// }
+
+		&__burger {
+			display: block;
+		}
+		&__main {
+			padding-top: 80px;
+		}
+
+		&__small-waves-decor {
+			position: absolute;
+			left: -15px;
+			top: -150px;
+		}
+	}
+
+	/* Portrait phones and smaller */
+	@media (max-width: 480px) {
+		&__menu {
+			margin-top: 20px;
+		}
+		&__logo {
+			img {
+				width: 140px;
+			}
+		}
+		&__title {
+			max-width: 315px;
+			font-size: 15px;
+			&::before {
+				background-size: 70%;
+				left: -8px;
+				top: -60px;
+			}
+		}
+		// &__form {
+		// 	max-width: 230px;
+		// 	&-text {
+		// 		font-size: 13px;
+		// 	}
+		// 	&-button {
+		// 		&::after {
+		// 			right: -95px;
+		// 			top: -135px;
+		// 		}
+		// 	}
+		// }
+
+		&__burger {
+			display: block;
+		}
+		&__main {
+			padding-top: 80px;
+		}
+
+		&__small-waves-decor {
+			position: absolute;
+			left: -15px;
+			top: -150px;
+		}
+	}
+
+	/* Iphone 5 */
+	@media (max-width: 340px) {
+		&__menu {
+			margin-top: 5px;
+		}
+		&__title {
+			max-width: 300px;
+			font-size: 13px;
+			&::before {
+				background-size: 70%;
+				left: -8px;
+				top: -60px;
+			}
+		}
+		// &__form {
+		// 	max-width: 190px;
+		// 	&-text {
+		// 		font-size: 12px;
+		// 	}
+		// 	&-button {
+		// 		&::after {
+		// 			display: none;
+		// 			right: -95px;
+		// 			top: -135px;
+		// 		}
+		// 	}
+		// }
+
+		&__burger {
+			display: block;
+		}
+		&__main {
+			padding-top: 80px;
+		}
+
+		&__small-waves-decor {
+			position: absolute;
+			left: -15px;
+			top: -150px;
+		}
+	}
+}

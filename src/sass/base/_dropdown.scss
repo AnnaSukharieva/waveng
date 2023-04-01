@@ -1,0 +1,54 @@
+.dropbtn {
+	box-sizing: border-box;
+	padding: 8px 0px;
+	background: #ffffff;
+	border: 2px solid #212121;
+	border-radius: 10px;
+	cursor: pointer;
+	width: 90%;
+	margin: 0 18px;
+	font-family: "Stolzl";
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 130%;
+	color: #212121;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #fff;
+	border: 2px solid #212121;
+	border-radius: 10px;
+	width: 90%;
+	margin: 0 18px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content li {
+	font-family: "Stolzl";
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 130%;
+	color: #212121;
+	padding: 10px;
+	width: 90%;
+	
+}
+
+.myDropdown{
+	.selected{
+		background: none;
+	}
+}
+
+
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+	display: block;
+	margin-bottom: 24px;
+}

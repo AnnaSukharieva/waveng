@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" type="text/css" href="slick/slick.css" />
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+	<link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
+	<title>WAVENG</title>
+</head>
+
+<body>
+	<div style="overflow: hidden;">
+		<header class="promo">
+			<div class="promo__menu">
+				<div class="promo__logo">
+					<img src="icons/LOGO.svg" alt="logo">
+				</div>
+				<nav id="menu">
+					<ul>
+						<li><a href="#price">Ціни</a></li>
+						<li><a href="#advantages">Переваги</a></li>
+						<li><a href="#feedback">Відгуки</a></li>
+						<li><a href="#footer">Контакти</a></li>
+					</ul>
+				</nav>
+				<div class="burger promo__burger">
+					<img src="icons/burger.svg" alt="burger menu">
+				</div>
+			</div>
+
+			<div class="promo__waves-decor">
+				<img src="icons/waves.svg" alt="decor">
+			</div>
+		</header>
+		<div style="position: relative;">
+			<div class="burger-menu">
+				<nav id="menu-mob" class="form-link burger__menu ">
+					<ul>
+						<li><a class="button form-link-button" href="#price">Ціни</a></li>
+						<li><a class="button form-link-button" href="#advantages">Переваги</a></li>
+						<li><a class="button form-link-button" href="#feedback">Відгуки</a></li>
+						<li><a class="button form-link-button" href="#footer">Контакти</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<section class="promo__main">
+			<div class="promo__title form-link-title">
+				<h1>Онлайн-школа англійськоЇ мови</h1>
+			</div>
+			<div class="promo__form form-link">
+				<div class="form-link-text">
+					Реєструйся на безкоштовне пробне заняття
+				</div>
+				<div id="button_1">
+					<a class="button form-link-button" href="#form-wrapper">записатись</a>
+				</div>
+			</div>
+		</section>
+
+		<div class="promo__wrapper">
+			<div class="promo__small-waves-decor">
+				<img src="icons/small_waves.svg" alt="decor">
+			</div>
+		</div>
+
+		<div class="about__wrapper">
+
+			<div class="wrapper">
+				<div class="about__decor">
+					Про нас
+				</div>
+				<section class="about">
+					<div class="about__pictures">
+						<div class="about__hidden">
+							<h2> Давай знайомитись! </h2>
+						</div>
+						<div class="about__img img-border">
+							<div class="about__img-wrapper">
+								<img src="images/about_img.png" alt="offic series">
+							</div>
+						</div>
+					</div>
+					<div class="about__introduction">
+						<h2> Давай знайомитись! </h2>
+						<p>Ми – онлайн школа англійської мови Wavenglish! Команда веселих і креативних викладачів, з якими
+							заняття
+							проходять в
+							легкій та дружній атмосфері.</p>
+						<img src="icons/hi_message.svg" alt="hi message">
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<section id="price" class="wrapper lessons">
+			<div class="lessons__decor">
+				<h3>Вартість <br> навчання</h3>
+			</div>
+			<ul class="lessons__groups">
+				<li data-category="individual" class="lessons-groups-item selected"> Індивідуальні заняття </li>
+				<li data-category="group" class="lessons-groups-item "> Групові заняття </li>
+				<li data-category="children" class="lessons-groups-item"> Заняття для дітей </li>
+			</ul>
+
+			<div class="dropdown lessons__groups-mobile">
+				<button onclick="myFunction()" class="dropbtn"> Індивідуальні заняття <img src="icons/blue_list_arrow.svg"
+						alt="arrow"></button>
+				<ul id="myDropdown" class="dropdown-content lessons-groups">
+					<li data-category="individual" class="lessons-groups-item selected"> Індивідуальні заняття</li>
+					<li data-category="group" class="lessons-groups-item "> Групові заняття </li>
+					<li data-category="children" class="lessons-groups-item"> Заняття для дітей</li>
+				</ul>
+			</div>
+
+			<div class="lessons__cards group card-selected">
+				<div class="lessons__card" style="background-color: #ffeafe">
+					<div class="lessons__card-title">1 заняття</div>
+					<div class="lessons__card-info">
+						<div class="lessons__card-schedule">
+							<div class="lessons__card-time"> Час: 60 хв </div>
+							<div class="lessons__card-days"> Пн-Ср / Вт-Чт </div>
+						</div>
+						<ul>
+							<li>Граматика</li>
+							<li>Спікінг</li>
+							<li>Ігри</li>
+						</ul>
+					</div>
+					<div id='1' class="lessons__card-price">
+						339 грн
+					</div>
+					<div id="card-button_1">
+						<a href="#form-wrapper" class="button lessons__card-button">Обрати</a>
+					</div>
+				</div>
+				<div class="lessons__card" style="background-color: #FEFCDE">
+					<div class="lessons__card-title">4 заняття</div>
+					<div class="lessons__card-info">
+						<div class="lessons__card-schedule">
+							<div class="lessons__card-time"> Час: 60 хв </div>
+							<div class="lessons__card-days"> Пн-Ср / Вт-Чт </div>
+						</div>
+						<ul>
+							<li>Граматика</li>
+							<li>Спікінг</li>
+							<li>Ігри</li>
+						</ul>
+					</div>
+					<div id='4' class="lessons__card-price">
+						1299 грн
+					</div>
+					<div id="card-button_2">
+						<a class="button lessons__card-button" href="#form-wrapper">Обрати</a>
+					</div>
+				</div>
+				<div class="lessons__card lessons__card" style="background-color: #CAE4FF">
+					<div class="lessons__card-title">8 занять</div>
+					<div class="lessons__card-info">
+						<div class="lessons__card-schedule">
+							<div class="lessons__card-time"> Час: 60 хв </div>
+							<div class="lessons__card-days"> Пн-Ср / Вт-Чт </div>
+						</div>
+						<ul>
+							<li>Граматика</li>
+							<li>Спікінг</li>
+							<li>Ігри</li>
+						</ul>
+					</div>
+					<div id='8' class="lessons__card-price">
+						2449 грн
+					</div>
+					<div id="card-button_3">
+						<a href="#form-wrapper" class="button lessons__card-button">Обрати</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="why">
+			<div class="wrapper">
+				<div class="why__we">
+					<img src="icons/why-we.svg" alt="decor">
+				</div>
+				<div class="why__individual"> <img src="icons/check.svg" alt="icon">
+					<h3>Індивідуальний підбір тічера
+						:)</h3>
+				</div>
+
+				<div id="advantages" class="why__match">
+					<div class="why__match-text-hidden">
+						<div>Ми знаємо, як важливо бути на одній хвилі з викладачем.</div>
+					</div>
+					<div class="why__person elem-1">
+						<div class="why__match-img">
+							<img src="images/why_woman.jpg" alt="woman">
+						</div>
+					</div>
+					<div class="why__match-reverso elem-2">
+						<div class="straight"><img src="icons/reverso_arrow.svg" alt="decor"></div>
+						<div class="hover"><img src="icons/match!.svg" alt="decor"></div>
+						<div class="under"><img src="icons/reverso_arrow.svg" alt="decor"></div>
+					</div>
+					<div class="why__person elem-3">
+						<div class="why__match-img">
+							<img src="images/why_man.jpg" alt="man">
+						</div>
+					</div>
+				</div>
+				<div class="why__match why__match-text">
+					<div>Ми знаємо, як важливо бути <br> на одній хвилі з викладачем.</div>
+					<div>Адже прагнемо, щоб навчання проходило комфортно і цікаво.</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="advantages advantages-desc">
+			<div class="advantages__cards advantages__cards-desc">
+				<div class="advantages__card" style="background-color:  #FFEAFE;;">
+					<div>
+						<h3> <img src="icons/check.svg" alt="checkbox"> Система навчання</h3>
+					</div>
+					<div>70% практики <br> 30% теорії <br> <br> Практика говоріння активує словниковий запас і допомагає
+						перетнути мовний бар’єр. Без стресу та
+						очікувань.</div>
+				</div>
+				<div class="advantages__card" style="background-color:  #FEFCDE;">
+					<div>
+						<h3> <img src="icons/check.svg" alt="checkbox"> Зручність і комфорт</h3>
+					</div>
+					<div>
+						Займайся англійською з будьякого місця та дивайса. Головне – подбай про інтернет, каву та гарний
+						настрій
+						:)
+					</div>
+				</div>
+				<div class="advantages__card" style="background-color:  #CAE4FF;">
+					<div>
+						<h3> <img src="icons/check.svg" alt="checkbox"> Гнучкий графік</h3>
+					</div>
+					<div>Формуємо графік з урахуванням всіх побажань. <br> <br> Заняття не згорають при відмині уроку чи
+						перенесенні.</div>
+				</div>
+				<div class="advantages__card" style="background-color:  #D1FFCA;">
+					<div>
+						<h3> <img src="icons/check.svg" alt="checkbox"> З рукою на пульсі та в ногу з часом</h3>
+					</div>
+					<div>
+						Актульні теми обговорення.Без вигаданих Мері і Джона. Можливо тільки Двайта залишимо. If you know what
+						I
+						mean.
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="advantages advantages-mob">
+			<div class="advantages__cards advantages__cards-mob">
+				<div class="advantages__card" style="background-color:  #FFEAFE;;">
+					<div>
+						<h3> <img src="icons/check.svg" alt="checkbox"> Система навчання</h3>
+					</div>
+					<div>70% практики <br> 30% теорії <br> <br> Практика говоріння активує словниковий запас і допомагає
+						перетнути мовний бар’єр. Без стресу та
+						очікувань.</div>
+				</div>
+				<div class="advantages__card" style="background-color:  #FEFCDE;">
+					<div>
+						<h3> <img src="icons/check.svg" alt="checkbox"> Зручність і комфорт</h3>
+					</div>
+					<div>
+						Займайся англійською з будьякого місця та дивайса. Головне – подбай про інтернет, каву та гарний
+						настрій
+						:)
+					</div>
+				</div>
+				<div class="advantages__card" style="background-color:  #CAE4FF;">
+					<div>
+						<h3> <img src="icons/check.svg" alt="checkbox"> Гнучкий графік</h3>
+					</div>
+					<div>Формуємо графік з урахуванням всіх побажань. <br> <br> Заняття не згорають при відмині уроку чи
+						перенесенні.</div>
+				</div>
+				<div class="advantages__card" style="background-color:  #D1FFCA;">
+					<div>
+						<h3> <img src="icons/check.svg" alt="checkbox"> З рукою на пульсі та в ногу з часом</h3>
+					</div>
+					<div>
+						Актульні теми обговорення.Без вигаданих Мері і Джона. Можливо тільки Двайта залишимо. If you know what
+						I
+						mean.
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="entery ">
+			<div class="entery__img">
+				<h3 class="entery__img-text">
+					Заповни просту форму і ми зв’яжемось з тобою
+				</h3>
+
+				<div class="entery__img-wrapper img-border">
+					<img src="images/entery.png" alt="img for form">
+				</div>
+			</div>
+			<div id="form-wrapper" class="entery__form">
+				<div class="entery__form-text">
+					Розпочати навчання:
+				</div>
+				<form id="form" class="entery__form-form" action="#">
+					<input id="name" name="name" minlength="2" placeholder="Твоє ім’я" type="text">
+					<input id="phone" name="phone" placeholder="Номер телефону">
+					<button id="button_submit" class="button button_submit">Записатись</button>
+					<div class="thanks" id="thanks" style="display: none">
+						Дякуємо!
+					</div>
+				</form>
+				<img class="entery__form-decor" src="icons/lets_go.svg" alt="decor">
+			</div>
+		</section>
+
+		<section id="questions" class="questions">
+			<h3 class="questions__title">
+				поширені questions
+			</h3>
+			<div class="questions__item">
+				<div class="questions__item-visible">
+					<div class="questions__item-title">
+						Як оплачується навчання?
+					</div>
+					<button data-question="question_1" class="questions__item-button arrow-button">
+						<img src="icons/questions_button.svg" alt="button">
+					</button>
+				</div>
+				<div data-question="question_1" class="questions__item-info hidden">
+					Ні. За тобою закріплюється вартість з моменту початку навчання і до завершення.
+				</div>
+				<img src="icons/Line_1.svg" alt="decor">
+			</div>
+
+			<div class="questions__item">
+				<div class="questions__item-visible">
+					<div class="questions__item-title">
+						Скільки триватиме курс?
+					</div>
+					<button data-question="question_2" class="questions__item-button arrow-button">
+						<img src="icons/questions_button.svg" alt="button">
+					</button>
+				</div>
+				<div data-question="question_2" class="questions__item-info hidden">
+					Ні. За тобою закріплюється вартість з моменту початку навчання і до завершення.
+				</div>
+				<img src="icons/Line_2.svg" alt="decor">
+			</div>
+			<div class="questions__item">
+				<div class="questions__item-visible">
+					<div class="questions__item-title">
+						Чи зміниться вартість потім?
+					</div>
+					<button data-question="question_3" class="questions__item-button arrow-button">
+						<img src="icons/questions_button.svg" alt="button">
+					</button>
+				</div>
+				<div data-question="question_3" class="questions__item-info hidden">
+					Ні. За тобою закріплюється вартість з моменту початку навчання і до завершення.
+				</div>
+				<img src="icons/Line_3.svg" alt="decor">
+			</div>
+			<div class="questions__item">
+				<div class="questions__item-visible">
+					<div class="questions__item-title">
+						Чи зміниться вартість потім?
+					</div>
+					<button data-question="question_4" class="questions__item-button arrow-button">
+						<img src="icons/questions_button.svg" alt="button">
+					</button>
+				</div>
+				<div data-question="question_4" class="questions__item-info hidden">
+					Ні. За тобою закріплюється вартість з моменту початку навчання і до завершення.
+				</div>
+				<img src="icons/Line_4.svg" alt="decor">
+			</div>
+			<div class="questions__item">
+				<div class="questions__item-visible">
+					<div class="questions__item-title">
+						Чи згорають заняття після місяця?
+					</div>
+					<button data-question="question_5" class="questions__item-button arrow-button">
+						<img src="icons/questions_button.svg" alt="button">
+					</button>
+				</div>
+				<div data-question="question_5" class="questions__item-info hidden">
+					Чи згорають заняття після місяця?
+				</div>
+				<img src="icons/Line_5.svg" alt="decor">
+			</div>
+
+		</section>
+
+		<div id="feedback">
+			<section class="feedback">
+				<div class="feedback__menu">
+					<h3 class="feedback__menu-title">
+						feedback студентів
+					</h3>
+					<div class="feedback__menu-desc">
+						<img src="icons/feedback_desc.svg" alt="description">
+					</div>
+					<a class="feedback__menu-button button" href="https://www.google.com/intl/uk_ua/forms/about/"
+						target="_blank">
+						Залишити відгук
+					</a>
+				</div>
+				<div class="feedback__items">
+					<div class="feedback__item pink">
+						<div class="feedback__item-comment">
+							Щоп'ятниці вже протягом кількох місяців я займаюся англійською з Веронікою. Не нудні уроки,
+							зрозуміла
+							граматика,
+							крутий
+							словниковий запас без особливих зусиль!
+						</div>
+						<div class="feedback__item-person">
+							<div class="feedback__item-photo">
+								<img src="images/Kristina.jpg" alt="Kristina">
+							</div>
+							<div class="feedback__item-info">
+								<div class="feedback__item-name">Христина <a href="#"> <img src="icons/inst.svg" alt="inst">
+									</a>
+								</div>
+								<div class="feedback__item-about">
+									Психолог, 23 роки <br> м. Київ
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="feedback__item green">
+						<div class="feedback__item-comment">
+							Я полюбила англійську!Поборола бар'єр страху, який заважав мені говорити. У мене з’явилась
+							мотивація!Також мій
+							словниковий запас збільшився! Дякую за це 😊
+						</div>
+						<div class="feedback__item-person">
+							<div class="feedback__item-photo">
+								<img src="images/Natasha.jpg" alt="Kristina">
+							</div>
+							<div class="feedback__item-info">
+								<div class="feedback__item-name">Наташа <a href="#"> <img src="icons/inst.svg" alt="inst"> </a>
+								</div>
+								<div class="feedback__item-about">
+									Студентка, 18 років <br> м. Львів
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="feedback__item blue">
+						<div class="feedback__item-comment">
+							На уроках весело та цікаво, пропускати зовсім не хочеться. Через те, що у групі небагато людей, то
+							кожному
+							приділяється достатньо уваги.
+						</div>
+						<div class="feedback__item-person">
+							<div class="feedback__item-photo">
+								<img src="images/Masha.jpg" alt="Kristina">
+							</div>
+							<div class="feedback__item-info">
+								<div class="feedback__item-name">Марія <a href="#"> <img src="icons/inst.svg" alt="inst"> </a>
+								</div>
+								<div class="feedback__item-about">
+									Проджект менеджер <br> 26 років, м. Дніпро
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="feedback feedback-mob">
+				<div class="feedback-mob-wrapper">
+					<div class="feedback__menu-title">
+						<h4>feedback студентів</h4>
+					</div>
+					<div class="feedback__menu-desc">
+						<img src="icons/feedback_desc.svg" alt="description">
+					</div>
+					<a class="feedback__menu-button button" href="https://www.google.com/intl/uk_ua/forms/about/"
+						target="_blank">
+						Залишити
+						відгук
+					</a>
+				</div>
+
+				<div class="feedback__items feedback__items-mob">
+					<div>
+						<div class="feedback__item feedback__item-mob pink">
+							<div class="feedback__item-comment">
+								Щоп'ятниці вже протягом кількох місяців я займаюся англійською з Веронікою. Не нудні уроки,
+								зрозуміла
+								граматика,
+								крутий
+								словниковий запас без особливих зусиль!
+							</div>
+							<div class="feedback__item-person">
+								<div class="feedback__item-photo">
+									<img src="images/Kristina.jpg" alt="Kristina">
+								</div>
+								<div class="feedback__item-info">
+									<div class="feedback__item-name">Христина <a href="#"> <img src="icons/inst.svg" alt="inst">
+										</a>
+									</div>
+									<div class="feedback__item-about">
+										Психолог, 23 роки <br> м. Київ
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="feedback__item feedback__item-mob green">
+							<div class="feedback__item-comment">
+								Я полюбила англійську!Поборола бар'єр страху, який заважав мені говорити. У мене з’явилась
+								мотивація!Також
+								мій
+								словниковий запас збільшився! Дякую за це 😊
+							</div>
+							<div class="feedback__item-person">
+								<div class="feedback__item-photo">
+									<img src="images/Natasha.jpg" alt="Kristina">
+								</div>
+								<div class="feedback__item-info">
+									<div class="feedback__item-name">Наташа <a href="#"> <img src="icons/inst.svg" alt="inst">
+										</a>
+									</div>
+									<div class="feedback__item-about">
+										Студентка, 18 років <br> м. Львів
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="feedback__item feedback__item-mob blue">
+							<div class="feedback__item-comment">
+								На уроках весело та цікаво, пропускати зовсім не хочеться. Через те, що у групі небагато людей,
+								то
+								кожному
+								приділяється достатньо уваги.
+							</div>
+							<div class="feedback__item-person">
+								<div class="feedback__item-photo">
+									<img src="images/Masha.jpg" alt="Kristina">
+								</div>
+								<div class="feedback__item-info">
+									<div class="feedback__item-name">Марія <a href="#"> <img src="icons/inst.svg" alt="inst">
+										</a>
+									</div>
+									<div class="feedback__item-about">
+										Проджект менеджер <br> 26 років, м. Дніпро
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<div class="wrapper">
+			<section class="ad">
+				<div class="ad__board-title ad__board-title-hidden">
+					<h4>Не зволікай!</h4>
+				</div>
+				<div class="ad__img">
+					<div class="ad__img-wrapper img-border">
+						<img src="images/add-img.jpg" alt="img_boy">
+					</div>
+				</div>
+
+				<div class="ad__board">
+					<div class="ad__board-title">
+						<h4>Не зволікай!</h4>
+					</div>
+					<div class="ad__board-form form-link">
+						<div class="form-link-text">
+							Реєструйся на безкоштовне пробне заняття
+						</div>
+						<div id="button_2">
+							<a class="button form-link-button" href="#form-wrapper">записатись</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<footer id="footer" class="footer">
+			<div class="footer__logo">
+				<img src="icons/LOGO_black.svg" alt="logo">
+			</div>
+			<div class="wrapper">
+				<div class="footer__info">
+					<div class="footer__contacts">
+						<div class="footer__contacts-phone">
+							<img src="icons/footer/phone.svg" alt="phone">
+							<a href="tel:+380636303333">+38(063) 630 33 33</a>
+						</div>
+						<div class="footer__contacts-email">
+							<img src="icons/footer/email.svg" alt="email">
+							<a href="mailto:wavenglish@gmail.com">wavenglish@gmail.com</a>
+						</div>
+					</div>
+					<div class="footer__social">
+						<div class="footer__social-links">
+							<div>
+								<a href="https://instagram.com/suvorovanika?igshid=YmMyMTA2M2Y=">
+									<img src="icons/footer/instagram.svg" alt="inst">
+								</a>
+							</div>
+							<div>
+								<a href="https://www.tiktok.com/@wavenglish?_t=8am6c9f0D3d&_r=1">
+									<img src="icons/footer/tiktok.svg" alt="tikok">
+								</a>
+							</div>
+						</div>
+						<div class="footer__social-text">
+							Ми в соціальних мережах
+						</div>
+					</div>
+					<nav id="footer__menu" class="footer__menu">
+						<ul>
+							<li><a href="#price">Ціни</a></li>
+							<li><a href="#advantages">Переваги</a></li>
+							<li><a href="#feedback">Відгуки</a></li>
+							<li><a href="#questions">FAQ</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/jquery.maskedinput.min.js"> </script>
+	<script src="slick/slick.min.js"></script>
+	<script src="js/slider.js"></script>
+	<script src="js/jquery.validate.min.js"> </script>
+	<script src="js/list.js"></script>
+	<script src="js/index.js"></script>
+</body>
+
+</html>

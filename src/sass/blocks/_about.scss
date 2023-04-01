@@ -1,0 +1,166 @@
+.about {
+	margin: 0 auto;
+	padding: 129px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-family: "Stolzl";
+	&__wrapper {
+		background-color: #b1b1ff;
+		position: relative;
+	}
+	&__hidden {
+		display: none;
+	}
+	h2 {
+		font-weight: 400;
+		font-size: 30px;
+		padding-bottom: 32px;
+		text-align: center;
+	}
+	
+	&__pictures {
+		position: relative;
+	}
+	&__decor {
+		font-family: "Stolzl";
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 34px;
+		position: absolute;
+		left: 50px;
+		top: -60px;
+		position: relative;
+		&::before {
+			content: "";
+			background: url("../icons/scratch.svg") no-repeat;
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			left: -35px;
+			top: 5px;
+		}
+		&::after {
+			content: "";
+			background: url("../icons/arrow.svg") no-repeat;
+			position: absolute;
+			width: 100px;
+			height: 170px;
+			left: 140px;
+			top: 15px;
+		}
+	}
+
+	&__introduction {
+		margin: 0 auto;
+		max-width: 430px;
+		color: $black;
+		position: relative;
+		p {
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 150%;
+		}
+		img {
+			position: absolute;
+			top: -200px;
+			left: 300px;
+		}
+	}
+	/* Landscape tablets and medium desktops */
+	@media (min-width: 992px) and (max-width: 1199px) {
+		max-width: 970px;
+		margin: 0 auto;
+		&__introduction {
+			img {
+				position: absolute;
+				top: -200px;
+				left: 210px;
+			}
+		}
+		&__img {
+			width: 80%;
+		}
+	}
+
+	/* Portrait tablets and small desktops */
+	@media (min-width: 768px) and (max-width: 991px) {
+		max-width: 750px;
+		padding: 133px 0 80px 0;
+		&__img {
+			width: 80%;
+		}
+		&__introduction {
+			p{
+				max-width: 400px;
+			}
+			img {
+				position: absolute;
+				top: -180px;
+				left: 100px;
+			}
+		}
+	}
+
+	/* Landscape phones and portrait tablets */
+	@media (max-width: 767px) {
+		flex-direction: column;
+		padding: 46px 0;
+		&__hidden {
+			display: block;
+		}
+		&__introduction {
+			h2 {
+				display: none;
+			}
+			p {
+				padding-top: 32px;
+			}
+			img {
+				position: absolute;
+				top: -125px;
+				left: 230px;
+			}
+		}
+		&__decor {
+			left: 70px;
+			top: -70px;
+		}
+		&__img {
+			
+			box-shadow: 4px 4px $black;
+			width: 90%;
+			margin: 0 auto;
+			img {
+				border: 12px solid #ffffff;
+			}
+		}
+	}
+
+	/* Portrait phones and smaller */
+	@media (max-width: 480px) {
+		max-width: 320px;
+		h2 {
+				font-size: 25px;
+			}
+		&__introduction {
+			p {
+				padding-top: 25px ;
+				font-size: 16px;
+				padding-left: 7px;
+				padding-right: 7px;
+			}
+			img {
+				height: 70%;
+				position: absolute;
+				top: -90px;
+				left: 170px;
+			}
+		}
+	}
+
+	/* Iphone 5 */
+	@media (max-width: 320px) {
+	}
+}

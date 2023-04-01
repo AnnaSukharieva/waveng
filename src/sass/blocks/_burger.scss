@@ -1,0 +1,38 @@
+.burger-menu {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.15), transparent 1px),
+		linear-gradient(90deg, rgba(0, 0, 0, 0.15), transparent 1px);
+	background-color: #f5f2ec;
+	background-size: 50px 50px;
+	background-position: center center;
+	z-index: 5;
+	margin-left: 100vw;
+	transition-duration: 0.6s;
+	.form-link {
+		&::before {
+			display: none;
+		}
+	}
+	.burger__menu {
+		margin-top: 35vh;
+		transform: translateY(-50%);
+		li {
+			margin-bottom: 25px;
+		}
+		&::after{
+			content: "";
+			background: url("../icons/small_waves.svg") no-repeat;
+			position: absolute;
+			left: -10%;
+			top: 110%;
+			width: 200px;
+			height: 70px;
+		}
+	}
+}
+
+.opened {
+	margin-left: 0;
+}

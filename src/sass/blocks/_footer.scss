@@ -1,0 +1,131 @@
+.footer {
+	padding: 56px 10px 62px 10px;
+	background-color: #b1b1ff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-weight: 300;
+	color: #212121;
+	font-size: 18px;
+	.wrapper {
+		width: 100%;
+	}
+	&__info {
+		margin-top: 55px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	&__contacts {
+		// font-size: 18px;
+		line-height: 22px;
+		div {
+			padding-bottom: 14px;
+			img {
+				padding-right: 11px;
+			}
+			a {
+				color: #212121;
+				transition-duration: 0.4ms;
+				&:hover {
+					transition-duration: 0.4ms;
+					font-weight: 400;
+				}
+			}
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}
+	&__social {
+		transform: translateX(-45%);
+		&-links {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding-bottom: 12px;
+			div {
+				transition-duration: 0.4ms;
+				&:hover {
+					cursor: pointer;
+					transform: scale(1.1);
+					transition-duration: 0.4ms;
+				}
+				padding: 0 12px;
+			}
+		}
+		&-text {
+			text-align: center;
+			max-width: 170px;
+			// font-size: 18px;
+			line-height: 22px;
+		}
+	}
+	&__menu {
+		// font-size: 18px;
+		line-height: 170%;
+		li {
+			a {
+				color: #212121;
+				transition-duration: 0.4ms;
+
+				&:hover {
+					font-weight: 400;
+					transition-duration: 0.4ms;
+				}
+			}
+			padding-bottom: 14px;
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	/* Landscape phones and portrait tablets */
+	@media (max-width: 767px) {
+		padding: 51px 10px 58px 10px;
+		&__info {
+			margin-top: 40px;
+			flex-direction: column;
+			align-items: center;
+		}
+		&__social {
+			order: 3;
+			transform: translateX(0%);
+		}
+		&__menu {
+			order: 1;
+			padding-bottom: 40px;
+
+			ul {
+				display: flex;
+				li {
+					padding-bottom: 0;
+					padding: 0px 12px;
+					&:last-child {
+						padding-bottom: 0;
+					}
+				}
+			}
+		}
+		&__contacts {
+			padding-bottom: 40px;
+			order: 2;
+			div {
+				padding-bottom: 2px;
+			}
+		}
+	}
+
+	/* Iphone 5 */
+	@media (max-width: 320px) {
+		font-size: 16px;
+		&__menu {
+			ul {
+				li {
+					padding: 0px 8px;
+				}
+			}
+		}
+	}
+}
