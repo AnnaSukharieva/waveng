@@ -21,12 +21,64 @@
 				transform: translate(4px, 4px);
 			}
 		}
+		&-table {
+			position: relative;
+			right: 50px;
+			width: 100%;
+			margin-top: 16px;
+			border-collapse: collapse;
+			tr {
+				border-bottom: 1px solid #252cde;
+				&:last-child {
+					border-bottom: none;
+				}
+				td,
+				th {
+					font-size: 16px;
+					width: 27.5%;
+					&:nth-child(2) {
+						border-right: 1px solid #252cde;
+						border-left: 1px solid #252cde;
+						width: 45%;
+						text-align: center;
+					}
+					&:nth-child(1) {
+						text-align: left;
+					}
+					&:nth-child(3) {
+						text-align: right;
+					}
+					.bold {
+						font-weight: bold;
+					}
+				}
+				th {
+					font-weight: bold;
+					padding: 21px 0 21px 0;
+				}
+				td {
+					font-weight: 400;
+					padding: 11px 0 11px 0;
+					vertical-align: top;
+					padding: 11px;
+					&:nth-child(1) {
+						padding-left: 30px;
+					}
+					&:nth-child(3) {
+						padding-right: 30px;
+					}
+				}
+			}
+		}
 		&-info {
 			font-weight: 400;
 			font-size: 18px;
 			line-height: 160%;
 			padding: 2px 0 13px 113px;
-			max-width: 560px;
+			max-width: 767px;
+			p {
+				max-width: 560px;
+			}
 		}
 		&-visible {
 			display: flex;
@@ -84,6 +136,9 @@
 					transform: translate(0px, 0px);
 				}
 			}
+			&-table {
+				right: 0;
+			}
 			&-title {
 				font-size: 18px;
 			}
@@ -103,6 +158,57 @@
 
 	/* Portrait phones and smaller */
 	@media (max-width: 480px) {
+		&__item {
+			&-table {
+				.only-desktop {
+					display: none;
+				}
+				tr {
+					border: none;
+					&:nth-child(1) {
+						border-bottom: 1px solid #252cde;
+					}
+					td {
+						font-size: 14px;
+
+						padding: 4px 0 4px 0;
+						text-align: center;
+						&:nth-child(1) {
+							display: none;
+						}
+						&:nth-child(3) {
+							padding-right: 0;
+							text-align: center;
+							width: 50%;
+						}
+						&:nth-child(2) {
+							border: none;
+							border-right: 1px solid #252cde;
+							text-align: center;
+							width: 50%;
+						}
+						.bold {
+							font-weight: normal;
+						}
+					}
+					th {
+						font-size: 14px;
+						font-weight: normal;
+						padding: 6px 0 6px 0;
+						&:nth-child(1) {
+							text-align: center;
+							border-right: 1px solid #252cde;
+						}
+						&:nth-child(2) {
+							display: none;
+						}
+						&:nth-child(3) {
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	/* Iphone 5 */
