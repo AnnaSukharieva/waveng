@@ -17,9 +17,8 @@
 		font-weight: 400;
 		font-size: 30px;
 		padding-bottom: 32px;
-		text-align: center;
 	}
-	
+
 	&__pictures {
 		position: relative;
 	}
@@ -58,7 +57,7 @@
 		color: $black;
 		position: relative;
 		p {
-			font-weight: 400;
+			font-weight: 300;
 			font-size: 18px;
 			line-height: 150%;
 		}
@@ -92,7 +91,7 @@
 			width: 80%;
 		}
 		&__introduction {
-			p{
+			p {
 				max-width: 400px;
 			}
 			img {
@@ -106,9 +105,10 @@
 	/* Landscape phones and portrait tablets */
 	@media (max-width: 767px) {
 		flex-direction: column;
-		padding: 46px 0;
+		padding: 46px 0 76px 0;
 		&__hidden {
 			display: block;
+			text-align: center;
 		}
 		&__introduction {
 			h2 {
@@ -116,6 +116,7 @@
 			}
 			p {
 				padding-top: 32px;
+				padding-left: 15px;
 			}
 			img {
 				position: absolute;
@@ -128,7 +129,6 @@
 			top: -70px;
 		}
 		&__img {
-			
 			box-shadow: 4px 4px $black;
 			width: 90%;
 			margin: 0 auto;
@@ -142,14 +142,12 @@
 	@media (max-width: 480px) {
 		max-width: 320px;
 		h2 {
-				font-size: 25px;
-			}
+			font-size: 25px;
+		}
 		&__introduction {
 			p {
-				padding-top: 25px ;
+				padding-top: 25px;
 				font-size: 16px;
-				padding-left: 7px;
-				padding-right: 7px;
 			}
 			img {
 				height: 70%;

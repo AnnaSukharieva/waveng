@@ -3,12 +3,6 @@
 	width: 90%;
 	max-width: 1300px;
 	margin: 0 auto;
-	// z-index: 5;
-	// &__wrapper {
-	// 	position: relative;
-	// 	width: 95%;
-	// 	margin: 0 auto;
-	// }
 	&__burger {
 		display: none;
 		background: #ffffff;
@@ -61,10 +55,9 @@
 	&__title {
 		margin: 0 auto;
 		max-width: 490px;
-		font-family: "Stolzl";
 		line-height: 250%;
 		font-style: normal;
-		font-weight: 700;
+		font-weight: 600;
 		font-size: 23px;
 		text-align: center;
 		text-transform: uppercase;

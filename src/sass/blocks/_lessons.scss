@@ -2,7 +2,6 @@
 	font-family: "Stolzl";
 	padding: 126px 0;
 	position: relative;
-	
 	&__decor {
 		font-weight: 700;
 		font-size: 34px;
@@ -165,7 +164,7 @@
 
 	/* Large desktops and laptops */
 	@media (max-width: 1288px) {
-		&__groups{
+		&__groups {
 			padding: 0 20px;
 		}
 		&__card {
@@ -210,8 +209,17 @@
 	/* Landscape phones and portrait tablets */
 	@media (max-width: 767px) {
 		padding-bottom: 60px;
+		padding-top: 180px;
+		max-width: 450px;
 		display: flex;
 		flex-direction: column;
+		&__groups {
+			display: none;
+			&-mobile {
+				display: block;
+				margin: 0 auto;
+			}
+		}
 		&__card {
 			padding: 25px 33px;
 		}
@@ -223,8 +231,8 @@
 		}
 		&__decor {
 			font-size: 30px;
-			top: 10px;
-			right: 5px;
+			top: 50px;
+			right: 25px;
 			&:after {
 				content: "";
 				background: url("../icons/mobile-curly-arrow.svg") no-repeat;
@@ -238,6 +246,8 @@
 
 	/* Portrait phones and smaller */
 	@media (max-width: 480px) {
+		padding-top: 180px;
+		max-width: 350px;
 		&__card {
 			padding: 25px 33px;
 			&-title {

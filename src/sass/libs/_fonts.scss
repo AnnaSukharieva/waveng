@@ -1,29 +1,8 @@
 @font-face {
-  font-family: 'Manrope';           /* название одно */
-  src: url('../fonts/Manrope-Medium.woff');     /* разные файлы */
-  font-weight: 500;                  /* разная плотность */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Manrope';           /* название одно */
-  src: url('../fonts/Manrope-Semibold.woff');     /* разные файлы */
-  font-weight: 600;                  /* разная плотность */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Manrope';           /* название одно */
-  src: url('../fonts/Manrope-Medium.woff');     /* разные файлы */
-  font-weight: 500;                  /* разная плотность */
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Stolzl';           /* название одно */
   src: url('../fonts/Stolzl-Bold.woff');     /* разные файлы */
   font-weight: 600;                  /* разная плотность */
-  font-style: normal;
+  font-style: bold;
 }
 
 
@@ -31,7 +10,7 @@
   font-family: 'Stolzl';           /* название одно */
   src: url('../fonts/Stolzl-Book.woff');     /* разные файлы */
   font-weight: 300;                  /* разная плотность */
-  font-style: normal;
+  font-style: book;
 }
 
 
@@ -39,7 +18,7 @@
   font-family: 'Stolzl';           /* название одно */
   src: url('../fonts/Stolzl-Medium.woff');     /* разные файлы */
   font-weight: 500;                  /* разная плотность */
-  font-style: normal;
+  font-style: medium;
 }
 
 
@@ -47,5 +26,5 @@
   font-family: 'Stolzl';           /* название одно */
   src: url('../fonts/Stolzl-Regular.woff');     /* разные файлы */
   font-weight: 400;                  /* разная плотность */
-  font-style: normal;
+  font-style: regular;
 }
