@@ -69,27 +69,18 @@ $(document).ready(function () {
     });
   });
 
-  $.validator.addMethod("regexp", function (value, element, params) {
-    var expression = new RegExp(params);
-    return this.optional(element) || expression.test(value);
-  });
-
   $("#form").validate({
     rules: {
       name: "required",
-      phone: {
-        required: true,
-        regexp: /^(\+?\d{1,3}[\-\(\)\d ]{4,15}\d)$/,
-      },
+      phone: "required",
     },
     messages: {
       name: "Будь ласка, вкажіть ваше ім'я",
-      phone: {
-        required: "Будь ласка, введіть ваш номер телефону",
-        regexp: "Будь ласка, введіть правильний номер телефону",
-      },
+      phone: "Будь ласка, введіть ваш номер телефону",
     },
   });
+
+  $("input[name=phone]").mask("+380 (99) 999-99-99");
 
   $("form").submit(function (e) {
     e.preventDefault();
