@@ -10,19 +10,20 @@
 		line-height: 130%;
 		color: #212121;
 		position: absolute;
-		top: -40px;
-		right: 150px;
+		top: -45px;
+		right: 115px;
 		&:after {
 			content: "";
 			background: url("../icons/curly_arrow.svg") no-repeat;
 			position: absolute;
-			right: -100px;
-			top: 15px;
+			right: -85px;
+			top: 70px;
 			width: 90px;
 			height: 150px;
 		}
 	}
 	&__groups {
+		max-width: 1085px;
 		display: flex;
 		margin: 0 auto;
 		align-items: center;
@@ -160,6 +161,7 @@
 
 	.button {
 		width: 100%;
+		box-sizing: border-box;
 	}
 
 	/* Large desktops and laptops */

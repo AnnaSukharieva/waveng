@@ -10,9 +10,6 @@ $(document).ready(function () {
       const img = '<img src="icons/blue_list_arrow.svg" alt="arrow"></img>';
       let category;
       switch (e.target.dataset.category) {
-        case "group":
-          category = "Групові заняття " + img;
-          break;
         case "children":
           category = "Заняття для дітей" + img;
           break;
@@ -29,41 +26,31 @@ $(document).ready(function () {
             e.target.dataset.category == "children") &&
           price.id == 1
         ) {
-          price.innerHTML = 339 + " грн";
-        }
-        if (
-          (e.target.dataset.category == "individual" ||
-            e.target.dataset.category == "children") &&
-          price.id == 4
-        ) {
-          price.innerHTML = 1299 + " грн";
+          price.innerHTML = 479 + " грн";
         }
         if (
           (e.target.dataset.category == "individual" ||
             e.target.dataset.category == "children") &&
           price.id == 8
         ) {
-          price.innerHTML = 2449 + " грн";
+          price.innerHTML = 3449 + " грн";
         }
-
-        if (e.target.dataset.category == "group" && price.id == 1) {
-          price.innerHTML = 299 + " грн";
-        }
-        if (e.target.dataset.category == "group" && price.id == 4) {
-          price.innerHTML = 999 + " грн";
-        }
-        if (e.target.dataset.category == "group" && price.id == 8) {
-          price.innerHTML = 1899 + " грн";
+        if (
+          (e.target.dataset.category == "individual" ||
+            e.target.dataset.category == "children") &&
+          price.id == 16
+        ) {
+          price.innerHTML = 6519 + " грн";
         }
 
         if (e.target.dataset.category == "native" && price.id == 1) {
           price.innerHTML = 999 + " грн";
         }
-        if (e.target.dataset.category == "native" && price.id == 4) {
-          price.innerHTML = 3799 + " грн";
-        }
         if (e.target.dataset.category == "native" && price.id == 8) {
           price.innerHTML = 7199 + " грн";
+        }
+        if (e.target.dataset.category == "native" && price.id == 16) {
+          price.innerHTML = 13799 + " грн";
         }
       });
     });

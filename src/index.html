@@ -103,66 +103,23 @@
 			</div>
 			<ul class="lessons__groups">
 				<li data-category="individual" class="lessons-groups-item selected"> Індивідуальні заняття </li>
-				<li data-category="group" class="lessons-groups-item "> Групові заняття </li>
-				<li data-category="children" class="lessons-groups-item"> Заняття для дітей </li>
 				<li data-category="native" class="lessons-groups-item"> Заняття з native speaker </li>
+				<li data-category="children" class="lessons-groups-item"> Заняття для дітей </li>
 			</ul>
 
 			<div class="dropdown lessons__groups-mobile">
-				<button onclick="myFunction()" class="dropbtn"> Індивідуальні заняття <img src="icons/blue_list_arrow.svg"
+				<button onclick="getMyDropdown()" class="dropbtn"> Індивідуальні заняття <img src="icons/blue_list_arrow.svg"
 						alt="arrow"></button>
 				<ul id="myDropdown" class="dropdown-content lessons-groups">
 					<li data-category="individual" class="lessons-groups-item selected"> Індивідуальні заняття</li>
-					<li data-category="group" class="lessons-groups-item "> Групові заняття </li>
-					<li data-category="children" class="lessons-groups-item"> Заняття для дітей</li>
 					<li data-category="native" class="lessons-groups-item"> Заняття з native speaker </li>
+					<li data-category="children" class="lessons-groups-item"> Заняття для дітей</li>
 
 				</ul>
 			</div>
 
 			<div class="lessons__cards group card-selected">
 				<div class="lessons__card lessons__card" style="background-color: #CAE4FF">
-					<div class="lessons__card-title">8 занять</div>
-					<div class="lessons__card-info">
-						<div class="lessons__card-schedule">
-							<div class="lessons__card-time"> Час: 60 хв </div>
-							<div class="lessons__card-days"> Пн-Ср / Вт-Чт </div>
-						</div>
-						<ul>
-							<li>Граматика</li>
-							<li>Спікінг</li>
-							<li>Ігри</li>
-						</ul>
-					</div>
-					<div id='8' class="lessons__card-price">
-						2449 грн
-					</div>
-					<div id="card-button_3">
-						<a href="#form-wrapper" class="button lessons__card-button">Обрати</a>
-					</div>
-				</div>
-				<div class="lessons__card" style="background-color: #FEFCDE">
-					<div class="lessons__card-title">4 заняття</div>
-					<div class="lessons__card-info">
-						<div class="lessons__card-schedule">
-							<div class="lessons__card-time"> Час: 60 хв </div>
-							<div class="lessons__card-days"> Пн-Ср / Вт-Чт </div>
-						</div>
-						<ul>
-							<li>Граматика</li>
-							<li>Спікінг</li>
-							<li>Ігри</li>
-						</ul>
-					</div>
-					<div id='4' class="lessons__card-price">
-						1299 грн
-					</div>
-					<div id="card-button_2">
-						<a class="button lessons__card-button" href="#form-wrapper">Обрати</a>
-					</div>
-				</div>
-
-				<div class="lessons__card" style="background-color: #ffeafe">
 					<div class="lessons__card-title">1 заняття</div>
 					<div class="lessons__card-info">
 						<div class="lessons__card-schedule">
@@ -176,7 +133,48 @@
 						</ul>
 					</div>
 					<div id='1' class="lessons__card-price">
-						339 грн
+						479 грн
+					</div>
+					<div id="card-button_3">
+						<a href="#form-wrapper" class="button lessons__card-button">Обрати</a>
+					</div>
+				</div>
+				<div class="lessons__card" style="background-color: #FEFCDE">
+					<div class="lessons__card-title">8 занять</div>
+					<div class="lessons__card-info">
+						<div class="lessons__card-schedule">
+							<div class="lessons__card-time"> Час: 60 хв </div>
+							<div class="lessons__card-days"> Пн-Ср / Вт-Чт </div>
+						</div>
+						<ul>
+							<li>Граматика</li>
+							<li>Спікінг</li>
+							<li>Ігри</li>
+						</ul>
+					</div>
+					<div id='8' class="lessons__card-price">
+						3449 грн
+					</div>
+					<div id="card-button_2">
+						<a class="button lessons__card-button" href="#form-wrapper">Обрати</a>
+					</div>
+				</div>
+
+				<div class="lessons__card" style="background-color: #ffeafe">
+					<div class="lessons__card-title">16 занять</div>
+					<div class="lessons__card-info">
+						<div class="lessons__card-schedule">
+							<div class="lessons__card-time"> Час: 60 хв </div>
+							<div class="lessons__card-days"> Пн-Ср / Вт-Чт </div>
+						</div>
+						<ul>
+							<li>Граматика</li>
+							<li>Спікінг</li>
+							<li>Ігри</li>
+						</ul>
+					</div>
+					<div id='16' class="lessons__card-price">
+						6519 грн
 					</div>
 					<div id="card-button_1">
 						<a href="#form-wrapper" class="button lessons__card-button">Обрати</a>
@@ -254,7 +252,8 @@
 						<h3> <img src="icons/check.svg" alt="checkbox"> З рукою на пульсі та в ногу з часом</h3>
 					</div>
 					<div>
-						Актульні теми обговорення. Без вигаданих Мері і Джона. Можливо тільки Двайта залишимо. If you know what
+						Актульні теми обговорення. Без вигаданих Мері і Джона. Можливо тільки Двайта залишимо. If you know
+						what
 						I
 						mean.
 					</div>
@@ -294,7 +293,8 @@
 						<h3> <img src="icons/check.svg" alt="checkbox"> З рукою на пульсі та в ногу з часом</h3>
 					</div>
 					<div>
-						Актульні теми обговорення. Без вигаданих Мері і Джона. Можливо тільки Двайта залишимо. If you know what
+						Актульні теми обговорення. Без вигаданих Мері і Джона. Можливо тільки Двайта залишимо. If you know
+						what
 						I
 						mean.
 					</div>
@@ -841,7 +841,8 @@
 								</a>
 							</div>
 							<div>
-								<a target="_blank" href="https://t.me/wavenglish"><img src="icons/footer/telegram.svg" alt="telegram"></a>
+								<a target="_blank" href="https://t.me/wavenglish"><img src="icons/footer/telegram.svg"
+										alt="telegram"></a>
 							</div>
 							<div>
 								<a target="_blank" href="https://www.tiktok.com/@wavenglish?_t=8am6c9f0D3d&_r=1">
