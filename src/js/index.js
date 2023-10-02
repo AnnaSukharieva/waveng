@@ -56,18 +56,35 @@ $(document).ready(function () {
     });
   });
 
+  $.validator.addMethod(
+    "regex",
+    function (value, element, regexp) {
+      return this.optional(element) || regexp.test(value);
+    },
+    "Номер телефону містить недопустимі символи"
+  );
+
   $("#form").validate({
     rules: {
-      name: "required",
-      phone: "required",
+      name: {
+        required: true,
+      },
+      phone: {
+        required: true,
+        regex: /^[0-9+\-\(\)\s]+$/,
+        minlength: 7,
+        maxlength: 20,
+      },
     },
     messages: {
       name: "Будь ласка, вкажіть ваше ім'я",
-      phone: "Будь ласка, введіть ваш номер телефону",
+      phone: {
+        required: "Будь ласка, введіть номер телефону",
+        minlength: "Номер телефону занадто короткий",
+        maxlength: "Номер телефону занадто довгий",
+      },
     },
   });
-
-  $("input[name=phone]").mask("+380 (99) 999-99-99");
 
   $("form").submit(function (e) {
     e.preventDefault();
@@ -86,7 +103,7 @@ $(document).ready(function () {
       },
     }).done(function () {
       $(this).find("input").val("");
-      $("#name, #phone, #button_submit").fadeOut(10);
+      $("#name, #phone, #social, #button_submit").fadeOut(10);
       $("#thanks").fadeIn("slow");
       $("form").trigger("reset");
     });

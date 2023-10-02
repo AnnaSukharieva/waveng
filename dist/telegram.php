@@ -5,11 +5,13 @@
 
 $name = $_POST['name'];
 $phone = $_POST['phone'];
+$social = $_POST['social'];
 $token = "6184274522:AAHFWPhhkwBoSvCAp3yG8K80rcs11Wbx0j8";
 $chat_id = "-928217072";
 $arr = array(
   'Ім`я: ' => $name,
-  'Телефон: ' => $phone
+  'Телефон: ' => $phone,
+  'Телеграм/інстаграм: ' => $social,
 );
 
 foreach($arr as $key => $value) {
