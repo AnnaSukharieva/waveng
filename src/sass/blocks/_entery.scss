@@ -67,6 +67,12 @@
 			font-size: 34px;
 			line-height: 130%;
 			color: #212121;
+		}
+		&-notice-text {
+			max-width: 430px;
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 160%;
 			margin-bottom: 24px;
 		}
 		&-form {
@@ -181,6 +187,11 @@
 			&-text {
 				font-size: 26px;
 			}
+			&-notice-text {
+			max-width: 100%;
+			padding: 0 25px;
+			font-size: 12px;
+		}
 			&-decor {
 				padding-right: 30px;
 			}
@@ -243,6 +254,9 @@
 				max-width: 190px;
 				text-align: center;
 			}
+			&-notice-text {
+			max-width: 80%;
+		}
 			&-form {
 				&::before {
 					opacity: 1;

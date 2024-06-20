@@ -1,60 +1,88 @@
 $(document).ready(function () {
   const lessonsCategory = document.querySelectorAll(".lessons-groups-item");
   const content = document.querySelectorAll(".lessons__card-price");
-  const dropbtn = document.querySelector(".dropbtn");
+  const slickSlider = document.querySelector(".lessons__cards");
+
+  const prices = {
+    individual: {
+      1: "599 грн",
+      4: "2275 грн",
+      8: "4349 грн",
+      16: "8145 грн",
+      32: "15339 грн",
+    },
+    group: {
+      1: 'не передбачено',
+      4: "1029 грн",
+      8: "1869 грн",
+      16: "3579 грн",
+      32: "6699 грн",
+    },
+    native: {
+      1: "999 грн",
+      4: "3799 грн",
+      8: "7199 грн",
+      16: "13799 грн",
+      32: "26199 грн",
+    },
+  };
+
+  function updatePrice(category, price) {
+    const id = price.id;
+    if (prices[category] && prices[category][id] !== undefined) {
+      price.innerHTML = prices[category][id];
+    }
+  }
+
+  function applyPricesToActiveCategory() {
+    const activeCategory = document.querySelector(
+      ".lessons-groups-item.selected"
+    );
+    if (activeCategory) {
+      const activeCategoryType = activeCategory.dataset.category;
+      content.forEach((price) => {
+        updatePrice(activeCategoryType, price);
+      });
+    }
+  }
+
+  applyPricesToActiveCategory();
 
   lessonsCategory.forEach((item) => {
     item.addEventListener("click", (e) => {
-      lessonsCategory.forEach((item) => item.classList.remove("selected"));
-      e.target.classList.add("selected");
-      const img = '<img src="icons/blue_list_arrow.svg" alt="arrow"></img>';
-      let category;
-      switch (e.target.dataset.category) {
-        case "children":
-          category = "Заняття для дітей" + img;
-          break;
-        case "native":
-          category = "Заняття з native speaker" + img;
-          break;
-        default:
-          category = "Індивідуальні заняття" + img;
-      }
-      dropbtn.innerHTML = category;
-      content.forEach((price) => {
-        if (
-          (e.target.dataset.category == "individual" ||
-            e.target.dataset.category == "children") &&
-          price.id == 1
-        ) {
-          price.innerHTML = 479 + " грн";
-        }
-        if (
-          (e.target.dataset.category == "individual" ||
-            e.target.dataset.category == "children") &&
-          price.id == 8
-        ) {
-          price.innerHTML = 3449 + " грн";
-        }
-        if (
-          (e.target.dataset.category == "individual" ||
-            e.target.dataset.category == "children") &&
-          price.id == 16
-        ) {
-          price.innerHTML = 6519 + " грн";
-        }
+      if (!e.target.classList.contains("selected")) {
+        lessonsCategory.forEach((item) => item.classList.remove("selected"));
+        e.target.classList.add("selected");
 
-        if (e.target.dataset.category == "native" && price.id == 1) {
-          price.innerHTML = 999 + " грн";
-        }
-        if (e.target.dataset.category == "native" && price.id == 8) {
-          price.innerHTML = 7199 + " грн";
-        }
-        if (e.target.dataset.category == "native" && price.id == 16) {
-          price.innerHTML = 13799 + " грн";
-        }
-      });
+        content.forEach((price) => {
+          updatePrice(e.target.dataset.category, price);
+        });
+      }
     });
   });
+
+  //  lessonsCategory.forEach((item) => {
+  //    item.addEventListener("click", (e) => {
+  //      lessonsCategory.forEach((item) => item.classList.remove("selected"));
+  //      e.target.classList.add("selected");
+  //      const img = '<img src="icons/blue_list_arrow.svg" alt="arrow"></img>';
+  //      let category;
+  //      switch (e.target.dataset.category) {
+  //        case "group":
+  //          category = "Групові заняття" + img;
+  //          break;
+  //        case "native":
+  //          category = "Заняття з native speaker" + img;
+  //          break;
+  //        default:
+  //          category = "Індивідуальні заняття" + img;
+  //      }
+  //      dropbtn.innerHTML = category;
+  //      content.forEach((price) => {
+  //        updatePrice(e.target.dataset.category, price);
+  //      });
+  //    });
+  //  });
 
   $.validator.addMethod(
     "regex",

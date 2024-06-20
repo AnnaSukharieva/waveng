@@ -1,291 +1,333 @@
 .lessons {
-	font-family: "Stolzl";
-	padding: 126px 0;
-	position: relative;
-	&__decor {
-		font-weight: 700;
-		font-size: 34px;
-		text-align: center;
-		text-transform: uppercase;
-		line-height: 130%;
-		color: #212121;
-		position: absolute;
-		top: -45px;
-		right: 115px;
-		&:after {
-			content: "";
-			background: url("../icons/curly_arrow.svg") no-repeat;
-			position: absolute;
-			right: -85px;
-			top: 70px;
-			width: 90px;
-			height: 150px;
-		}
-	}
-	&__groups {
-		max-width: 1085px;
-		display: flex;
-		margin: 0 auto;
-		align-items: center;
-		justify-content: space-between;
-		&-mobile {
-			display: none;
-			margin: 0 auto;
-			width: 100%;
-			.dropbtn {
-				img {
-					transform: translate(10px, 7px);
-				}
-			}
-		}
-		&-item,
-		li {
-			transition-duration: 0.4s;
-			padding: 10px 17px;
-			border: 2px solid #212121;
-			border-radius: 10px;
-			font-weight: 400;
-			font-size: 24px;
-			line-height: 130%;
-			cursor: pointer;
-		}
-	}
+  font-family: "Stolzl";
+  padding: 126px 0;
+  position: relative;
+  & .slick-dots {
+    position: absolute;
+    bottom: -60px;
+    transform: translateY(-50%);
+  }
+  & .arrow-button {
+    z-index: 100;
+    position: absolute;
+    bottom: -60px;
+    transform: translateY(-50%);
+  }
+  & .slick-next {
+    left: calc(50%);
+    transform: translateX(180%);
+	 &:hover {
+      transition-duration: 0.4s;
+      box-shadow: 0px 0px #212121;
+      transform: translate(calc(180% + 4px), 4px);
+    }
+  }
+  & .slick-prev {
+    left: calc(50%);
+    transform: translateX(-280%);
+	 &:hover {
+      transition-duration: 0.4s;
+      box-shadow: 0px 0px #212121;
+      transform: translate(calc(-280% + 4px), 4px);
+    }
+  }
 
-	&__cards {
-		margin-top: 26px;
-		width: 100%;
-	}
+  &__decor {
+	// z-index: 30;
+    font-weight: 700;
+    font-size: 34px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 130%;
+    color: #212121;
+    position: absolute;
+    top: -45px;
+    right: 115px;
+    &:after {
+      content: "";
+      background: url("../icons/curly_arrow.svg") no-repeat;
+      position: absolute;
+      right: -85px;
+      top: 70px;
+      width: 90px;
+      height: 150px;
+    }
+  }
+  &__groups {
+    max-width: 80%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    &-mobile {
+      display: none;
+      margin: 0 auto;
+      width: 100%;
+      .dropbtn {
+        img {
+          transform: translate(10px, 7px);
+        }
+      }
+    }
+    &-item,
+    li {
+      transition-duration: 0.4s;
+      padding: 10px 17px;
+      border: 2px solid #212121;
+      border-radius: 10px;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 130%;
+      cursor: pointer;
+    }
+  }
 
-	.card-selected {
-		display: block;
-		width: 100%;
-	}
+  &__cards {
+    margin-top: 26px;
+    width: 100%;
+  }
 
-	&__card {
-		transition-duration: 0.4s;
-		box-shadow: 6px 6px #212121;
-		width: 33%;
-		padding: 45px 53px;
-		border: 2px solid #212121;
-		border-radius: 20px;
-		margin: 18px;
-		&-title {
-			font-weight: 500;
-			font-size: 24px;
-			line-height: 130%;
-			padding: 10px 0;
-			border: 2px solid #212121;
-			border-radius: 10px;
-			background: #ffffff;
-			text-align: center;
-			margin-bottom: 14px;
-			text-transform: uppercase;
-		}
+  .card-selected {
+    display: block;
+    width: 100%;
+  }
 
-		&-schedule {
-			display: flex;
-			color: rgba(33, 33, 33, 0.62);
-			font-weight: 400;
-			font-size: 14px;
-			padding: 16px 24px;
-			padding-top: 0;
-		}
+  &__card {
+    transition-duration: 0.4s;
+    box-shadow: 6px 6px #212121;
+    width: 33%;
+    padding: 45px 53px;
+    border: 2px solid #212121;
+    border-radius: 20px;
+    margin: 18px;
+    &-title {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 130%;
+      padding: 10px 0;
+      border: 2px solid #212121;
+      border-radius: 10px;
+      background: #ffffff;
+      text-align: center;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
 
-		&-time {
-			position: relative;
-			padding-left: 30px;
-			&::before {
-				content: "";
-				position: absolute;
-				background: url("../icons/clock.svg") no-repeat;
-				width: 26px;
-				height: 35px;
-				left: 7px;
-				top: -3px;
-			}
-		}
+    &-schedule {
+      display: flex;
+      color: rgba(33, 33, 33, 0.62);
+      font-weight: 400;
+      font-size: 14px;
+      padding: 16px 24px;
+      padding-top: 0;
+    }
 
-		&-days {
-			position: relative;
-			padding-left: 30px;
-			&::before {
-				content: "";
-				position: absolute;
-				background: url("../icons/calendar.svg") no-repeat;
-				width: 20px;
-				height: 20px;
-				left: 7px;
-				top: -3px;
-			}
-		}
+    &-time {
+      position: relative;
+      padding-left: 30px;
+      &::before {
+        content: "";
+        position: absolute;
+        background: url("../icons/clock.svg") no-repeat;
+        width: 26px;
+        height: 35px;
+        left: 7px;
+        top: -3px;
+      }
+    }
 
-		&-info {
-			padding: 16px 0;
-			border: 2px solid #212121;
-			border-radius: 10px;
-			background: #ffffff;
-			ul {
-				li {
-					font-size: 18px;
-					position: relative;
-					margin-left: 60px;
-					margin-bottom: 12px;
-					&:last-child {
-						margin-bottom: 0px;
-					}
-					&::before {
-						content: "";
-						position: absolute;
-						background: url("../icons/checkbox.svg") no-repeat;
-						width: 35px;
-						height: 35px;
-						left: -35px;
-						top: -3px;
-					}
-				}
-			}
-		}
+    &-days {
+      position: relative;
+      padding-left: 30px;
+      &::before {
+        content: "";
+        position: absolute;
+        background: url("../icons/calendar.svg") no-repeat;
+        width: 20px;
+        height: 20px;
+        left: 7px;
+        top: -3px;
+      }
+    }
 
-		&-price {
-			font-weight: 500;
-			font-size: 32px;
-			color: #252cde;
-			text-align: center;
-			padding: 14px 0;
-		}
-	}
+    &-info {
+      padding: 16px 0;
+      border: 2px solid #212121;
+      border-radius: 10px;
+      background: #ffffff;
+      ul {
+        li {
+          font-size: 18px;
+          position: relative;
+          margin-left: 60px;
+          margin-bottom: 12px;
+          &:last-child {
+            margin-bottom: 0px;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            background: url("../icons/checkbox.svg") no-repeat;
+            width: 35px;
+            height: 35px;
+            left: -35px;
+            top: -3px;
+          }
+        }
+      }
+    }
 
-	.selected {
-		background-color: #fff;
-	}
+    &-price {
+      font-weight: 500;
+      font-size: 32px;
+      color: #252cde;
+      text-align: center;
+      padding: 14px 0;
+    }
+  }
 
-	.button {
-		width: 100%;
-		box-sizing: border-box;
-	}
+  .selected {
+    background-color: #fff;
+  }
 
-	/* Large desktops and laptops */
-	@media (max-width: 1288px) {
-		&__groups {
-			padding: 0 20px;
-		}
-		&__card {
-			&-schedule {
-				font-size: 10px;
-			}
-		}
-	}
+  .button {
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-	/* Landscape tablets and medium desktops */
-	@media (min-width: 992px) and (max-width: 1199px) {
-		&__groups {
-			&-item,
-			li {
-				font-size: 18px;
-			}
-		}
-	}
+  /* Large desktops and laptops */
+  @media (max-width: 1288px) {
+    &__groups {
+      padding: 0 20px;
+    }
+    &__card {
+      &-schedule {
+        font-size: 10px;
+      }
+    }
+  }
 
-	/* Portrait tablets and small desktops */
-	@media (min-width: 768px) and (max-width: 991px) {
-		padding-bottom: 56px;
-		&__groups {
-			display: none;
-			&-mobile {
-				display: block;
-				margin: 0 auto;
-			}
-		}
-		&__card {
-			padding: 25px 33px;
-		}
-		&__decor {
-			font-size: 28px;
-			right: 100px;
-		}
-		.button {
-			width: 92%;
-		}
-	}
+  /* Landscape tablets and medium desktops */
+  @media (min-width: 992px) and (max-width: 1199px) {
+    &__groups {
+      &-item,
+      li {
+        font-size: 18px;
+      }
+    }
+  }
 
-	/* Landscape phones and portrait tablets */
-	@media (max-width: 767px) {
-		padding-bottom: 60px;
-		padding-top: 180px;
-		max-width: 450px;
-		display: flex;
-		flex-direction: column;
-		&__groups {
-			display: none;
-			&-mobile {
-				display: block;
-				margin: 0 auto;
-			}
-		}
-		&__card {
-			padding: 25px 33px;
-		}
-		&-info {
-			padding: 16px 0;
-			border: 2px solid #212121;
-			border-radius: 10px;
-			background: #ffffff;
-		}
-		&__decor {
-			font-size: 30px;
-			top: 50px;
-			right: 25px;
-			&:after {
-				content: "";
-				background: url("../icons/mobile-curly-arrow.svg") no-repeat;
-				right: 210px;
-				top: 30px;
-				width: 90px;
-				height: 120px;
-			}
-		}
-	}
+  /* Portrait tablets and small desktops */
+  @media (min-width: 768px) and (max-width: 991px) {
+    // padding-bottom: 56px;
+    &__groups {
+      flex-direction: column;
+      &-item,
+      li {
+        margin: 10px;
+        font-size: 24px;
+      }
+      // 	&-mobile {
+      // 		display: block;
+      // 		margin: 0 auto;
+      // 	}
+    }
+    &__card {
+      padding: 25px 33px;
+    }
+    &__decor {
+      font-size: 28px;
+      right: 100px;
+    }
+    .button {
+      width: 92%;
+    }
+  }
 
-	/* Portrait phones and smaller */
-	@media (max-width: 480px) {
-		padding-top: 180px;
-		max-width: 350px;
-		&__card {
-			padding: 25px 33px;
-			&-title {
-				font-size: 19px;
-			}
+  /* Landscape phones and portrait tablets */
+  @media (max-width: 767px) {
+    padding-bottom: 60px;
+    padding-top: 180px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    &__groups {
+      flex-direction: column;
+      &-item,
+      li {
+        margin: 10px;
+        width: 100%;
+        text-align: center;
+      }
+      // 	&-mobile {
+      // 		display: block;
+      // 		margin: 0 auto;
+      // 	}
+    }
+    &__card {
+      padding: 25px 33px;
+    }
+    &-info {
+      padding: 16px 0;
+      border: 2px solid #212121;
+      border-radius: 10px;
+      background: #ffffff;
+    }
+    &__decor {
+      font-size: 30px;
+      top: 50px;
+      right: 25px;
+      &:after {
+        content: "";
+        background: url("../icons/mobile-curly-arrow.svg") no-repeat;
+        right: 210px;
+        top: 30px;
+        width: 90px;
+        height: 120px;
+      }
+    }
+  }
 
-			&-schedule {
-				font-size: 9px;
-				padding: 10px 10px;
-			}
+  /* Portrait phones and smaller */
+  @media (max-width: 480px) {
+    padding-top: 180px;
+    max-width: 350px;
+    &__card {
+      padding: 25px 33px;
+      &-title {
+        font-size: 19px;
+      }
 
-			&-info {
-				padding: 16px 0;
-				border: 2px solid #212121;
-				border-radius: 10px;
-				background: #ffffff;
-				ul {
-					padding: 8px;
-					li {
-						font-size: 16px;
-						margin-left: 50px;
-					}
-				}
-			}
+      &-schedule {
+        font-size: 9px;
+        padding: 10px 10px;
+      }
 
-			&-price {
-				font-size: 29px;
-			}
-		}
-		.button {
-			width: 90%;
-		}
-	}
+      &-info {
+        padding: 16px 0;
+        border: 2px solid #212121;
+        border-radius: 10px;
+        background: #ffffff;
+        ul {
+          padding: 8px;
+          li {
+            font-size: 16px;
+            margin-left: 50px;
+          }
+        }
+      }
 
-	/* Iphone 5 */
-	@media (max-width: 320px) {
-		padding-bottom: 20px;
-	}
+      &-price {
+        font-size: 29px;
+      }
+    }
+    .button {
+      width: 90%;
+    }
+  }
+
+  /* Iphone 5 */
+  @media (max-width: 320px) {
+    padding-bottom: 20px;
+  }
 }
