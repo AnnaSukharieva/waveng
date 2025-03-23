@@ -1,52 +1,53 @@
 $(document).ready(function () {
   const lessonsCategory = document.querySelectorAll(".lessons-groups-item");
   const content = document.querySelectorAll(".lessons__card-price");
-  const slickSlider = document.querySelector(".lessons__cards");
+  const lessonsCards = document.querySelectorAll(".lessons__card");
 
   const prices = {
-    individual: {
-      1: "599 грн",
-      4: "2275 грн",
-      8: "4349 грн",
-      16: "8145 грн",
-      32: "15339 грн",
-    },
-    group: {
-      1: '279 грн',
-      4: "1029 грн",
-      8: "1869 грн",
-      16: "3579 грн",
-      32: "6699 грн",
-    },
-    native: {
-      1: "999 грн",
-      4: "3799 грн",
-      8: "7199 грн",
-      16: "13799 грн",
-      32: "26199 грн",
-    },
+    individual: { 4: "2499 грн", 8: "4779 грн", 16: "8959 грн", 32: "16879 грн" },
+    group: { 4: "1139 грн", 8: "2059 грн", 16: "3939 грн", 32: "7369 грн" },
+    pair: { 4: "1449 грн", 8: "2749 грн", 16: "5129 грн", 32: "9739 грн" },
   };
 
-  function updatePrice(category, price) {
-    const id = price.id;
-    if (prices[category] && prices[category][id] !== undefined) {
-      price.innerHTML = prices[category][id];
-    }
+  function updatePrice(category) {
+    content.forEach((price) => {
+      const id = price.id;
+      if (prices[category] && prices[category][id] !== undefined) {
+        price.innerHTML = prices[category][id];
+      }
+    });
   }
 
-  function applyPricesToActiveCategory() {
-    const activeCategory = document.querySelector(
-      ".lessons-groups-item.selected"
-    );
-    if (activeCategory) {
-      const activeCategoryType = activeCategory.dataset.category;
-      content.forEach((price) => {
-        updatePrice(activeCategoryType, price);
+  function applyPricesWithScaleAnimation(category) {
+    if (!prices[category]) return;
+
+    // 1. Картки стискаються до центру і зникають
+    lessonsCards.forEach((card) => {
+      card.style.transition = "transform 0.3s ease-out, opacity 0.3s ease-out";
+      card.style.transform = "scale(0)";
+      card.style.opacity = "0";
+    });
+
+    setTimeout(() => {
+      // 2. Оновлюємо ціни
+      updatePrice(category);
+
+      // 3. Задаємо новим карткам стартове положення (стиснуті)
+      lessonsCards.forEach((card) => {
+        card.style.transition = "none";
+        card.style.transform = "scale(0)";
       });
-    }
-  }
 
-  applyPricesToActiveCategory();
+      setTimeout(() => {
+        // 4. Картки плавно розширюються назад
+        lessonsCards.forEach((card) => {
+          card.style.transition = "transform 0.3s ease-in, opacity 0.3s ease-in";
+          card.style.transform = "scale(1)";
+          card.style.opacity = "1";
+        });
+      }, 50);
+    }, 300);
+  }
 
   lessonsCategory.forEach((item) => {
     item.addEventListener("click", (e) => {
@@ -54,12 +55,13 @@ $(document).ready(function () {
         lessonsCategory.forEach((item) => item.classList.remove("selected"));
         e.target.classList.add("selected");
 
-        content.forEach((price) => {
-          updatePrice(e.target.dataset.category, price);
-        });
+        applyPricesWithScaleAnimation(e.target.dataset.category);
       }
     });
   });
+
+  applyPricesWithScaleAnimation(document.querySelector(".lessons-groups-item.selected")?.dataset.category || "individual");
+
 
   //  lessonsCategory.forEach((item) => {
   //    item.addEventListener("click", (e) => {

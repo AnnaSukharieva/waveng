@@ -11,7 +11,7 @@ $(document).ready(function () {
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 1,
-					arrows: false,
+					arrows: true,
 					dots: true
 				}
 			},
@@ -20,7 +20,7 @@ $(document).ready(function () {
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1,
-					arrows: false,
+					arrows: true,
 					dots: true
 				}
 			}
