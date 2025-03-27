@@ -3,8 +3,8 @@ $(document).ready(function () {
 		infinite: false,
 		slidesToShow: 3,
 		slidesToScroll: 1,
-		arrows: true,
-		dots: true,
+		arrows: false,
+		dots: false,
 		responsive: [
 			{
 				breakpoint: 1000,
