@@ -2,6 +2,7 @@ $(document).ready(function () {
   const lessonsCategory = document.querySelectorAll(".lessons-groups-item");
   const content = document.querySelectorAll(".lessons__card-price");
   const lessonsCards = document.querySelectorAll(".lessons__card");
+  const oneLessonPriceEls = document.querySelectorAll(".one-lesson__card-price");
 
   const prices = {
     individual: { 
@@ -24,6 +25,11 @@ $(document).ready(function () {
     }
   };
 
+  function formatPrice(num) {
+    // форматування з пробілами для тисяч і "грн" у кінці
+    return num.toLocaleString('uk-UA') + " грн";
+  }
+
   function updatePrice(category) {
     content.forEach((priceWrapper) => {
       const realPriceEl = priceWrapper.querySelector(".lessons__card-price-real");
@@ -33,6 +39,18 @@ $(document).ready(function () {
       if (prices[category] && prices[category][id]) {
         realPriceEl.innerHTML = prices[category][id].real;
         discountPriceEl.innerHTML = prices[category][id].sale;
+      }
+    });
+
+    // 🧮 Оновлення цін за одне заняття
+    oneLessonPriceEls.forEach((el) => {
+      const id = el.id.split("_")[0]; // наприклад "32_one-lesson" → "32"
+      const lessonsCount = parseInt(id);
+      const data = prices[category]?.[lessonsCount];
+      if (data) {
+        const realNumber = parseInt(data.real.replace(/\D/g, "")); // витягуємо цифри
+        const oneLessonPrice = Math.round(realNumber / lessonsCount);
+        el.textContent = formatPrice(oneLessonPrice);
       }
     });
   }
@@ -74,7 +92,9 @@ $(document).ready(function () {
     });
   });
 
-  applyPricesWithScaleAnimation(document.querySelector(".lessons-groups-item.selected")?.dataset.category || "individual");
+  applyPricesWithScaleAnimation(
+    document.querySelector(".lessons-groups-item.selected")?.dataset.category || "individual"
+  );
 
   //  lessonsCategory.forEach((item) => {
   //    item.addEventListener("click", (e) => {
