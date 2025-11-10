@@ -1,57 +1,63 @@
 $(document).ready(function () {
   const lessonsCategory = document.querySelectorAll(".lessons-groups-item");
-  const content = document.querySelectorAll(".lessons__card-price");
   const lessonsCards = document.querySelectorAll(".lessons__card");
-  const oneLessonPriceEls = document.querySelectorAll(".one-lesson__card-price");
 
+  // 🧾 Три картки — фіксовані слоти 1, 2, 3
   const prices = {
-    individual: { 
-      // 4: { real: "2499 грн", sale: "3070 грн" }, 
-      8: { real: "4779 грн", sale: "5600 грн" }, 
-      16: { real: "8959 грн", sale: "11200 грн" }, 
-      32: { real: "16879 грн", sale: "22400 грн" }
+    individual: {
+      1: { lessons: 8, real: 4779, sale: 6300 },
+      2: { lessons: 16, real: 8959, sale: 12000 },
+      3: { lessons: 32, real: 16879, sale: 25000 },
     },
-    group: { 
-      // 4: { real: "1139 грн", sale: "1400 грн" }, 
-      8: { real: "2059 грн", sale: "2520 грн" }, 
-      16: { real: "3939 грн", sale: "5040 грн" }, 
-      32: { real: "7369 грн", sale: "10080 грн" }
+    pair: {
+      1: { lessons: 8, real: 2749, sale: 3700 },
+      2: { lessons: 16, real: 5129, sale: 7000 },
+      3: { lessons: 32, real: 9739, sale: 13500 },
     },
-    pair: { 
-      // 4: { real: "1449 грн", sale: "1800 грн" }, 
-      8: { real: "2749 грн", sale: "3200 грн" }, 
-      16: { real: "5129 грн", sale: "6400 грн" }, 
-      32: { real: "9739 грн", sale: "12800 грн" }
-    }
+    group: {
+      1: { lessons: 12, real: 3459, sale: 4200 },
+      2: { lessons: 24, real: 6219, sale: 7700 },
+      3: { lessons: 32, real: 7809, sale: 11000 },
+    },
   };
 
   function formatPrice(num) {
-    // форматування з пробілами для тисяч і "грн" у кінці
-    return num.toLocaleString('uk-UA') + " грн";
+    return num.toLocaleString("uk-UA") + " грн";
+  }
+
+  // 🧠 Правильне відмінювання “заняття”
+  function getLessonWord(num) {
+    const lastDigit = num % 10;
+    const lastTwo = num % 100;
+    if (lastTwo >= 11 && lastTwo <= 14) return "занять";
+    if (lastDigit === 1) return "заняття";
+    if (lastDigit >= 2 && lastDigit <= 4) return "заняття";
+    return "занять";
   }
 
   function updatePrice(category) {
-    content.forEach((priceWrapper) => {
-      const realPriceEl = priceWrapper.querySelector(".lessons__card-price-real");
-      const discountPriceEl = priceWrapper.querySelector(".lessons__card-price-discount");
-      const id = realPriceEl.id;
+    lessonsCards.forEach((card, i) => {
+      const slot = i + 1;
+      const data = prices[category]?.[slot];
+      if (!data) return;
 
-      if (prices[category] && prices[category][id]) {
-        realPriceEl.innerHTML = prices[category][id].real;
-        discountPriceEl.innerHTML = prices[category][id].sale;
-      }
-    });
+      const titleEl = card.querySelector(".lessons__card-title");
+      const realPriceEl = card.querySelector(".lessons__card-price-real");
+      const discountPriceEl = card.querySelector(".lessons__card-price-discount");
+      const oneLessonEl = card.querySelector(".one-lesson__card-price");
 
-    // 🧮 Оновлення цін за одне заняття
-    oneLessonPriceEls.forEach((el) => {
-      const id = el.id.split("_")[0]; // наприклад "32_one-lesson" → "32"
-      const lessonsCount = parseInt(id);
-      const data = prices[category]?.[lessonsCount];
-      if (data) {
-        const realNumber = parseInt(data.real.replace(/\D/g, "")); // витягуємо цифри
-        const oneLessonPrice = Math.round(realNumber / lessonsCount);
-        el.textContent = formatPrice(oneLessonPrice);
-      }
+      const word = getLessonWord(data.lessons);
+
+      // 🪄 оновлюємо кількість занять
+      titleEl.textContent = `${data.lessons} ${word}`;
+
+      // 💰 оновлюємо ціну
+      realPriceEl.textContent = formatPrice(data.real);
+      discountPriceEl.textContent = formatPrice(data.sale);
+
+      // 🧮 розрахунок ціни за одне заняття
+      const oneLessonPrice = Math.round(data.real / data.lessons);
+      oneLessonEl.textContent = formatPrice(oneLessonPrice);
     });
   }
 
@@ -92,33 +98,12 @@ $(document).ready(function () {
     });
   });
 
+  // 🏁 початкове завантаження
   applyPricesWithScaleAnimation(
     document.querySelector(".lessons-groups-item.selected")?.dataset.category || "individual"
   );
 
-  //  lessonsCategory.forEach((item) => {
-  //    item.addEventListener("click", (e) => {
-  //      lessonsCategory.forEach((item) => item.classList.remove("selected"));
-  //      e.target.classList.add("selected");
-  //      const img = '<img src="icons/blue_list_arrow.svg" alt="arrow"></img>';
-  //      let category;
-  //      switch (e.target.dataset.category) {
-  //        case "group":
-  //          category = "Групові заняття" + img;
-  //          break;
-  //        case "native":
-  //          category = "Заняття з native speaker" + img;
-  //          break;
-  //        default:
-  //          category = "Індивідуальні заняття" + img;
-  //      }
-  //      dropbtn.innerHTML = category;
-  //      content.forEach((price) => {
-  //        updatePrice(e.target.dataset.category, price);
-  //      });
-  //    });
-  //  });
-
+  // ------------------ ФОРМА ------------------
   $.validator.addMethod(
     "regex",
     function (value, element, regexp) {
@@ -129,9 +114,7 @@ $(document).ready(function () {
 
   $("#form").validate({
     rules: {
-      name: {
-        required: true,
-      },
+      name: { required: true },
       phone: {
         required: true,
         regex: /^[0-9+\-\(\)\s]+$/,
@@ -152,9 +135,7 @@ $(document).ready(function () {
   $("form").submit(function (e) {
     e.preventDefault();
 
-    if (!$(this).valid()) {
-      return;
-    }
+    if (!$(this).valid()) return;
 
     $.ajax({
       type: "POST",
@@ -173,6 +154,7 @@ $(document).ready(function () {
     return false;
   });
 
+  // ------------------ FAQ ------------------
   const questionButtons = document.querySelectorAll(".questions__item-button");
   const questionInfos = document.querySelectorAll(".questions__item-info");
 
@@ -188,39 +170,15 @@ $(document).ready(function () {
     });
   });
 
+  // ------------------ SCROLL ------------------
   function scroll(id) {
     $(id).on("click", "a", function (event) {
-      //отменяем стандартную обработку нажатия по ссылке
       event.preventDefault();
-
-      //забираем идентификатор бока с атрибута href
-      var id = $(this).attr("href"),
-        //узнаем высоту от начала страницы до блока на который ссылается якорь
-        top = $(id).offset().top;
-
-      //анимируем переход на расстояние - top за 1500 мс
+      const blockId = $(this).attr("href");
+      const top = $(blockId).offset().top;
       $("body,html").animate({ scrollTop: top }, 1500);
     });
   }
-
-  const burgerMenu = document.querySelector(".burger-menu");
-  const burgerBtn = document.querySelector(".promo__burger");
-
-  burgerBtn.addEventListener("click", () => {
-    burgerMenu.classList.toggle("opened");
-    if (burgerMenu.classList.contains("opened")) {
-      document.querySelector("body").style.overflow = "hidden";
-    } else {
-      document.querySelector("body").style.overflow = "auto";
-    }
-    // burgerMenu.classList.toggle('opened');
-    burgerMenu.childNodes[0].childNodes[0].childNodes.forEach((item) => {
-      item.addEventListener("click", () => {
-        burgerMenu.classList.remove("opened");
-        document.querySelector("body").style.overflow = "auto";
-      });
-    });
-  });
 
   scroll("#menu");
   scroll("#menu-mob");
@@ -230,4 +188,22 @@ $(document).ready(function () {
   scroll("#card-button_1");
   scroll("#card-button_2");
   scroll("#card-button_3");
+
+  // ------------------ BURGER ------------------
+  const burgerMenu = document.querySelector(".burger-menu");
+  const burgerBtn = document.querySelector(".promo__burger");
+
+  burgerBtn.addEventListener("click", () => {
+    burgerMenu.classList.toggle("opened");
+    document.body.style.overflow = burgerMenu.classList.contains("opened")
+      ? "hidden"
+      : "auto";
+
+    burgerMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        burgerMenu.classList.remove("opened");
+        document.body.style.overflow = "auto";
+      });
+    });
+  });
 });
